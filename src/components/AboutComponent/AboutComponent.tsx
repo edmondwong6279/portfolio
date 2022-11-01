@@ -11,7 +11,8 @@ const AboutComponent: React.FC<Props> = ({}) => (
     <h2>About</h2>
     <section>
       <h3>CV</h3>
-      <Link href="/api/getCV">Get CV PDF</Link>
+      {/* <Link href="/api/getCV">Get CV PDF</Link> */}
+      <Link href="/Ed_Wong_CV.pdf">Get CV PDF</Link>
     </section>
     <section>
       <h3>HOBBIES AND INTERESTS</h3>
