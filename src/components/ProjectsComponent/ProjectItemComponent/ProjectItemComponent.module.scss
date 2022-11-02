@@ -3,8 +3,10 @@
 .gridItem {
 	display: grid;
 	width: 100%;
+	align-items: center;
 	justify-content: center;
-	margin: 20px 0;
+	padding: 40px 0;
+	border-bottom: 2px $primary solid;
 	grid-template-areas:
 		"image title"
 		"image description"
@@ -20,35 +22,55 @@
 	}
 
 	.gridImage {
-		font-size: 20px;
 		grid-area: image;
-
-		.image {
-			position: relative;
-			width: 500px;
-			height: 500px;
-		}
 	}
 
 	.gridDescription {
-		margin: 0 30px;
-		font-size: 20px;
+		margin: 0 20px;
+		font-size: 13px;
 		grid-area: description;
+
+		@include tablet {
+			margin: 0 30px;
+			font-size: 16px;
+		}
+
+		@include desktop {
+			margin: 0 30px;
+			font-size: 18px;
+		}
 	}
 
-	.gridTags {
+	.gridTagsContainer {
 		display: flex;
-		height: 50px;
 		align-items: center;
-		justify-content: space-around;
-		margin: 0 30px;
-		font-weight: 800;
+		justify-content: space-between;
 
-		.gridTag {
-			padding: 5px;
-			border: 1px $secondary solid;
-			// height: 30px;
-			font-size: 20px;
+		h4 {
+			margin: 10px 30px;
+			text-transform: uppercase;
+		}
+
+		.gridTags {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-around;
+			font-weight: 800;
+			gap: 10px;
+
+			.gridTag {
+				padding: 5px;
+				border-radius: 5px;
+				background-color: $secondary;
+				font-size: 20px;
+				transition: background-color 0.5s ease-in-out;
+				// cursor: pointer;
+
+				&.gridTag:hover {
+					background-color: $tertiary;
+				}
+			}
 		}
 	}
 }

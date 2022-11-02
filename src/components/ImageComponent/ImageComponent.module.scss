@@ -2,4 +2,18 @@
 
 .container {
 	position: relative;
+	width: auto;
+	width: 200px;
+	height: auto;
+	height: 200px;
+
+	@include tablet {
+		width: 400px;
+		height: 400px;
+	}
+
+	@include desktop {
+		width: 600px;
+		height: 600px;
+	}
 }

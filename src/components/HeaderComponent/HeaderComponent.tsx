@@ -10,6 +10,7 @@ export type Props = {
 const HeaderComponent: React.FC<Props> = ({ totalDuration }) => (
   <motion.div
     className={styles.headerContainer}
+    initial={{ opacity: 0 }}
     animate={{
       opacity: [0, 1],
       y: ["50vh", "50vh", "0vh"],

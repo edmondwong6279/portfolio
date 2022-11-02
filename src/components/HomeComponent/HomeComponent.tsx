@@ -4,7 +4,6 @@ import LandingComponent from "../LandingComponent";
 import AboutComponent from "../AboutComponent";
 import SkillsComponent from "../SkillsComponent";
 import ProjectsComponent from "../ProjectsComponent";
-import ContactComponent from "../ContactComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import NavComponent from "../NavComponent";
 import HeaderComponent from "../HeaderComponent";
@@ -28,10 +27,6 @@ const sectionArray = [
     component: <SkillsComponent />,
   },
   { name: "Projects", component: <ProjectsComponent /> },
-  {
-    name: "Contact",
-    component: <ContactComponent />,
-  },
 ];
 
 const totalDuration = 2;

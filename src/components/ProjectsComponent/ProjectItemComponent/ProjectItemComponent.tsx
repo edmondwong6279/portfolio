@@ -1,13 +1,13 @@
 import styles from "./ProjectItemComponent.module.scss";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import ImageComponent from "../../ImageComponent";
 
 export type Props = {
   projectItem: {
     title: string;
     image: string;
-    description: string;
+    description: JSX.Element;
     link: string;
     tags: string[];
   };
@@ -19,23 +19,19 @@ const ProjectItemComponent: React.FC<Props> = ({ projectItem }) => (
     <div className={styles.gridTitle}>{projectItem.title}</div>
     <div className={styles.gridImage}>
       <Link href={projectItem.link} target={"_blank"}>
-        <Image
-          alt={""}
-          src={projectItem.image}
-          object-fit={"contain"}
-          width={400}
-          height={300}
-        />
+        <ImageComponent alt={""} src={projectItem.image} />
       </Link>
     </div>
-    <div className={styles.gridDescription}>
-      <p>{projectItem.description}</p>
-    </div>
-    <div className={styles.gridTags}>
-      Tags:
-      {projectItem.tags.map((tag) => (
-        <div className={styles.gridTag}>{tag}</div>
-      ))}
+    <div className={styles.gridDescription}>{projectItem.description}</div>
+    <div className={styles.gridTagsContainer}>
+      <h4>Tags:</h4>
+      <div className={styles.gridTags}>
+        {projectItem.tags.map((tag, idx) => (
+          <div className={styles.gridTag} key={idx}>
+            {tag}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );

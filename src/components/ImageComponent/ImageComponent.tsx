@@ -5,24 +5,11 @@ import Image from "next/image";
 export type Props = {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
-  emptyProp?: boolean;
 };
 
-const ImageComponent: React.FC<Props> = ({ src, alt, width, height }) => (
-  <div
-    className={styles.container}
-    style={{ width: width || "auto", height: height || "auto" }}
-  >
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      // objectFit={"cover"}
-      // width={width}
-      // height={height}
-    />
+const ImageComponent: React.FC<Props> = ({ src, alt }) => (
+  <div className={styles.container}>
+    <Image src={src} alt={alt} fill sizes="600px" />
   </div>
 );
 
