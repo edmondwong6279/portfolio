@@ -1,4 +1,4 @@
-// API for getting the CV
+// API for getting the CV, does not work on vercel
 import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 

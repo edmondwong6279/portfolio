@@ -1,6 +1,31 @@
 @import "src/styles/main";
 
 .container {
-	margin: 30px auto;
-	max-width: 1000px;
+	position: relative;
+	width: 100%;
+
+	.headerContainer {
+		position: sticky;
+		z-index: 5;
+		top: 0;
+		padding: 30px 0;
+		box-shadow: 0 0 0;
+		transition: all 0.2s ease-in-out;
+
+		&.scrolled {
+			box-shadow: 0 0 5px;
+		}
+	}
+
+	.sections {
+		@include container;
+
+		display: grid;
+
+		.sectionContainer {
+			overflow: hidden;
+			margin-top: 20px;
+			grid-area: 1/1/2/2;
+		}
+	}
 }

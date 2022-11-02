@@ -19,3 +19,18 @@ $laptop: 1024px;
 		@content;
 	}
 }
+
+@mixin container {
+	width: 100%;
+	max-width: 700px;
+	padding: 0 30px;
+	margin: 0 auto;
+
+	@include tablet {
+		max-width: 1000px;
+	}
+
+	@include desktop() {
+		max-width: 1200px;
+	}
+}

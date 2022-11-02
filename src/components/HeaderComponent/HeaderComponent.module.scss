@@ -1,0 +1,24 @@
+@import "src/styles/main";
+
+.headerContainer {
+	@include container;
+
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h1 {
+		margin: 0;
+		font-size: 50px;
+	}
+
+	.hr {
+		width: 100%;
+		border: none;
+		border-radius: 50%;
+		margin: 5px 0;
+		background-color: $primary;
+	}
+}

@@ -1,4 +1,4 @@
-@import './imports/variables.scss';
+@import "./imports/variables.scss";
 
 html,
 body {
@@ -15,7 +15,12 @@ a {
 *::before,
 *::after {
 	box-sizing: border-box;
-	font-family: 'Quicksand', sans-serif;
-	color: $primary;
 	background-color: $bg;
+	color: $primary;
+	font-family: Quicksand, sans-serif;
+}
+
+// is this a bad thing to use?
+::-webkit-scrollbar {
+	display: none;
 }

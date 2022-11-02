@@ -1,0 +1,54 @@
+@import "src/styles/main";
+
+.gridItem {
+	display: grid;
+	width: 100%;
+	justify-content: center;
+	margin: 20px 0;
+	grid-template-areas:
+		"image title"
+		"image description"
+		"image tags";
+
+	.gridTitle {
+		margin: 0 30px;
+		font-size: 20px;
+		font-size: 30px;
+		font-weight: 600;
+		grid-area: title;
+		text-align: center;
+	}
+
+	.gridImage {
+		font-size: 20px;
+		grid-area: image;
+
+		.image {
+			position: relative;
+			width: 500px;
+			height: 500px;
+		}
+	}
+
+	.gridDescription {
+		margin: 0 30px;
+		font-size: 20px;
+		grid-area: description;
+	}
+
+	.gridTags {
+		display: flex;
+		height: 50px;
+		align-items: center;
+		justify-content: space-around;
+		margin: 0 30px;
+		font-weight: 800;
+
+		.gridTag {
+			padding: 5px;
+			border: 1px $secondary solid;
+			// height: 30px;
+			font-size: 20px;
+		}
+	}
+}
