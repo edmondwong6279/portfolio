@@ -19,6 +19,10 @@ const AboutComponent: React.FC<Props> = ({}) => (
         M.Sc. Computer Science- Distinction (83.9%). Awarded "Best Student in
         M.Sc. Computer Science" for highest grade.
       </h4>
+      <ImageComponent
+        src={"/images/me.jpg"}
+        alt={"Image of me at my M.Sc Computer Science graduation."}
+      />
     </div>
     <div className={styles.aboutSection}>
       <h3>Extra Curricula Achievments</h3>

@@ -2,7 +2,8 @@ export type projectType = {
   title: string;
   image: string;
   description: JSX.Element;
-  link: string;
+  projectLink?: string;
+  gitprojectLink?: string;
   tags: string[];
 };
 
@@ -30,7 +31,7 @@ export const workArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "https://xenonarc.com/",
+    projectLink: "https://xenonarc.com/",
     tags: ["framer-motion", "SVG", "team project"],
   },
   {
@@ -70,7 +71,7 @@ export const workArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "https://shoegen.universlabs.co.uk/",
+    projectLink: "https://shoegen.universlabs.co.uk/",
     tags: [
       "python",
       "machine learning",
@@ -102,7 +103,7 @@ export const workArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "https://rhinostics.com/roi/",
+    projectLink: "https://rhinostics.com/roi/",
     tags: ["data visualisation", "team project"],
   },
   {
@@ -137,7 +138,6 @@ export const workArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "#",
     tags: ["data visualisation", "SVG", "team project"],
   },
 ];
@@ -178,8 +178,8 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-
-    link: "google.com",
+    projectLink: "https://covid-data-vis.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/covid-data-vis",
     tags: [
       "d3",
       "fetch API",
@@ -221,7 +221,7 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "https://letthewordsout.com/",
+    projectLink: "https://letthewordsout.com/",
     tags: ["canvas", "matter-js", "d3", "SQL", "PostgreSQL", "solo project"],
   },
   {
@@ -251,7 +251,8 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "google.com",
+    // projectLink: "google.com",
+    gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
     tags: ["canvas", "game", "fun", "solo project", "web sockets"],
   },
   {
@@ -276,7 +277,8 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "google.com",
+    projectLink: "https://drawing-tool-ew.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/drawing-tool",
     tags: ["canvas", "fun", "solo project"],
   },
   {
@@ -304,7 +306,8 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "google.com",
+    projectLink: "https://expanding-shapes.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/expanding-shapes",
     tags: ["canvas", "fun", "solo project"],
   },
   {
@@ -339,7 +342,8 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "google.com",
+    projectLink: "https://solar-system-simulator.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/solar-system-simulator",
     tags: ["cannon-es", "three-js", "fun", "solo project", "3D"],
   },
   {
@@ -373,7 +377,8 @@ export const personalArray: projectType[] = [
         </ul>
       </>
     ),
-    link: "google.com",
+    projectLink: "https://space-pool.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/space-pool",
     tags: ["cannon-es", "three-js", "fun", "solo project", "3D"],
   },
 ];

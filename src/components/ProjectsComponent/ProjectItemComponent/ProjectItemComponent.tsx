@@ -1,16 +1,11 @@
 import styles from "./ProjectItemComponent.module.scss";
 import React from "react";
-import Link from "next/link";
 import ImageComponent from "../../ImageComponent";
 
+import { projectType } from "../ProjectArrayComponent/projectArrays";
+
 export type Props = {
-  projectItem: {
-    title: string;
-    image: string;
-    description: JSX.Element;
-    link: string;
-    tags: string[];
-  };
+  projectItem: projectType;
   emptyProp?: boolean;
 };
 
@@ -18,9 +13,27 @@ const ProjectItemComponent: React.FC<Props> = ({ projectItem }) => (
   <div className={styles.gridItem}>
     <div className={styles.gridTitle}>{projectItem.title}</div>
     <div className={styles.gridImage}>
-      <Link href={projectItem.link} target={"_blank"}>
-        <ImageComponent alt={""} src={projectItem.image} />
-      </Link>
+      <ImageComponent alt={""} src={projectItem.image} />
+    </div>
+    <div className={styles.linkContainer}>
+      {projectItem.projectLink && (
+        <a
+          target={"_blank"}
+          className={styles.link}
+          href={projectItem.projectLink}
+        >
+          Project Link
+        </a>
+      )}
+      {projectItem.gitprojectLink && (
+        <a
+          target={"_blank"}
+          className={styles.link}
+          href={projectItem.gitprojectLink}
+        >
+          Github Repo
+        </a>
+      )}
     </div>
     <div className={styles.gridDescription}>{projectItem.description}</div>
     <div className={styles.gridTagsContainer}>

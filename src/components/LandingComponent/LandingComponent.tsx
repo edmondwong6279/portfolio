@@ -1,7 +1,6 @@
 import styles from "./LandingComponent.module.scss";
 import React from "react";
 import Link from "next/link";
-import ImageComponent from "../ImageComponent";
 
 export type Props = {
   emptyProp?: boolean;
@@ -28,7 +27,6 @@ const contactArray = [
 const LandingComponent: React.FC<Props> = ({}) => (
   <div className={styles.container}>
     <h2>My name is ed and welcome to my portfolio.</h2>
-    <ImageComponent src={"/images/me.jpg"} alt={"Image of ed."} />
     <p>
       I am an enthuisastic programmer with a wide range of skills. This
       portfolio demonstrates many of the skills I have attained from a few of
