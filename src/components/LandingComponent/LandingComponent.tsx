@@ -66,7 +66,11 @@ const LandingComponent: React.FC<Props> = ({}) => (
       </Link>
     </p>
     <div className={styles.cvContainer}>
-      <object className={styles.cv} data={"/Ed_Wong_CV.pdf"}></object>
+      <object
+        className={styles.cv}
+        type="application/pdf"
+        data={"/Ed_Wong_CV.pdf"}
+      ></object>
     </div>
   </div>
 );
