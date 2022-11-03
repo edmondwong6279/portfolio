@@ -5,44 +5,62 @@
 	width: 100%;
 	align-items: center;
 	justify-content: center;
-	padding: 40px 0;
-	border-bottom: 2px $primary solid;
+	padding: 10px 0;
+	border-top: 2px $primary solid;
 	grid-template-areas:
-		"image title"
-		"image description"
-		"links tags";
+		"title"
+		"image"
+		"description"
+		"links"
+		"tags";
+	justify-items: center;
+
+	@include tablet {
+		padding: 40px 0;
+		grid-template-areas:
+			"image title"
+			"image description"
+			"links tags";
+	}
+
+	&.noLine {
+		border-top: none;
+	}
 
 	.gridTitle {
-		margin: 0 30px;
+		margin: 10px 30px;
 		font-size: 20px;
-		font-size: 30px;
 		font-weight: 600;
 		grid-area: title;
 		text-align: center;
+
+		@include tablet {
+			font-size: 30px;
+		}
 	}
 
 	.gridImage {
+		width: 200px;
 		grid-area: image;
+
+		@include tablet {
+			width: 300px;
+		}
+
+		@include tablet {
+			width: 400px;
+		}
 	}
 
 	.linkContainer {
 		display: flex;
 		justify-content: center;
+		margin: 20px 0;
 		gap: 20px;
 		grid-area: links;
 
 		.link {
-			padding: 5px;
-			border-radius: 10px;
-			background-color: $secondary;
-			cursor: pointer;
-			font-size: 20px;
-			font-weight: 700;
-			transition: background-color 0.5s ease-in-out;
-
-			&.link:hover {
-				background-color: $tertiary;
-			}
+			@include link;
 		}
 	}
 
@@ -66,6 +84,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin: 20px 0;
 
 		h4 {
 			margin: 10px 30px;
@@ -77,20 +96,10 @@
 			flex-wrap: wrap;
 			align-items: center;
 			justify-content: space-around;
-			font-weight: 800;
 			gap: 10px;
 
 			.gridTag {
-				padding: 5px;
-				border-radius: 5px;
-				background-color: $secondary;
-				font-size: 20px;
-				transition: background-color 0.5s ease-in-out;
-				// cursor: pointer;
-
-				&.gridTag:hover {
-					background-color: $tertiary;
-				}
+				@include link;
 			}
 		}
 	}

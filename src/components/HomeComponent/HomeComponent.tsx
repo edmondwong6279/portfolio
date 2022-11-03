@@ -5,7 +5,6 @@ import AboutComponent from "../AboutComponent";
 import SkillsComponent from "../SkillsComponent";
 import ProjectsComponent from "../ProjectsComponent";
 import { motion, AnimatePresence } from "framer-motion";
-import NavComponent from "../NavComponent";
 import HeaderComponent from "../HeaderComponent";
 import classNames from "classnames";
 
@@ -48,8 +47,7 @@ const HomeComponent: React.FC<Props> = ({}) => {
           [styles.scrolled]: scrolled,
         })}
       >
-        <HeaderComponent totalDuration={totalDuration} />
-        <NavComponent
+        <HeaderComponent
           sectionArray={sectionArray}
           totalDuration={totalDuration}
           section={section}
@@ -78,6 +76,9 @@ const HomeComponent: React.FC<Props> = ({}) => {
           </AnimatePresence>
         ))}
       </motion.div>
+      <footer className={styles.hrContainer}>
+        <hr className={styles.hr} />
+      </footer>
     </div>
   );
 };

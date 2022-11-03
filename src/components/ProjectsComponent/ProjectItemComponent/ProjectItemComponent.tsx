@@ -3,14 +3,15 @@ import React from "react";
 import ImageComponent from "../../ImageComponent";
 
 import { projectType } from "../ProjectArrayComponent/projectArrays";
+import classNames from "classnames";
 
 export type Props = {
   projectItem: projectType;
-  emptyProp?: boolean;
+  idx: number;
 };
 
-const ProjectItemComponent: React.FC<Props> = ({ projectItem }) => (
-  <div className={styles.gridItem}>
+const ProjectItemComponent: React.FC<Props> = ({ projectItem, idx }) => (
+  <div className={classNames(styles.gridItem, { [styles.noLine]: idx === 0 })}>
     <div className={styles.gridTitle}>{projectItem.title}</div>
     <div className={styles.gridImage}>
       <ImageComponent alt={""} src={projectItem.image} />

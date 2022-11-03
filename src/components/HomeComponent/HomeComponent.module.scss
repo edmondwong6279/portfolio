@@ -28,4 +28,21 @@
 			grid-area: 1/1/2/2;
 		}
 	}
+
+	.hrContainer {
+		display: flex;
+		height: 50px;
+		align-items: center;
+
+		@include container;
+
+		.hr {
+			width: 100%;
+			height: 5px;
+			border: none;
+			border-radius: 50%;
+			margin: 5px 0;
+			background-color: $primary;
+		}
+	}
 }

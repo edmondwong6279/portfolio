@@ -13,13 +13,13 @@ const ProjectArrayComponent: React.FC<Props> = ({}) => (
     <h3>Personal Projects</h3>
     <div className={styles.gridContainer}>
       {personalArray.map((personalItem, idx) => (
-        <ProjectItemComponent projectItem={personalItem} key={idx} />
+        <ProjectItemComponent projectItem={personalItem} idx={idx} key={idx} />
       ))}
     </div>
     <h3>Work Projects</h3>
     <div className={styles.gridContainer}>
       {workArray.map((workItem, idx) => (
-        <ProjectItemComponent projectItem={workItem} key={idx} />
+        <ProjectItemComponent projectItem={workItem} idx={idx} key={idx} />
       ))}
     </div>
   </div>

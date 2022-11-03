@@ -1,6 +1,14 @@
 import styles from "./AboutComponent.module.scss";
 import React from "react";
 import ImageComponent from "../ImageComponent";
+import classNames from "classnames";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export type Props = {
   emptyProp?: boolean;
@@ -10,130 +18,300 @@ const AboutComponent: React.FC<Props> = ({}) => (
   <section className={styles.container}>
     <div className={styles.aboutSection}>
       <h3>Education Achievements</h3>
-      <h4>B.Sci Mathematics- Class I with honours. (80%)</h4>
-      <ImageComponent
-        alt={"My friends and I at our graduation."}
-        src={"/images/maths_grad.jpg"}
-      />
-      <h4>
-        M.Sc. Computer Science- Distinction (83.9%). Awarded "Best Student in
-        M.Sc. Computer Science" for highest grade.
-      </h4>
-      <ImageComponent
-        src={"/images/me.jpg"}
-        alt={"Image of me at my M.Sc Computer Science graduation."}
-      />
+      <div className={styles.item}>
+        <h4 className={styles.header}>
+          B.Sci Mathematics
+          <br /> <span className={styles.italics}>Class I with honours</span>
+        </h4>
+        <ul className={styles.description}>
+          <li>
+            Awarded the George Watson Scholarship for outstanding A-Level
+            results.
+          </li>
+          <li>
+            Awarded ”Best Presented Project” in Mathematical Modelling and
+            Problem Solving Module.
+          </li>
+        </ul>
+        <div className={styles.imageContainer}>
+          <ImageComponent
+            alt={"My friends and I at our graduation."}
+            src={"/images/maths_grad.jpg"}
+            height={400}
+            width={400}
+          />
+        </div>
+      </div>
+
+      <div className={styles.item}>
+        <h4 className={styles.header}>
+          M.Sc. Computer Science
+          <br /> <span className={styles.italics}>Distinction</span>
+        </h4>
+        <ul className={styles.description}>
+          <li>
+            Awarded the Distinguished Alumni Scholarship for excellent
+            undergraduate degree.
+          </li>
+          <li>
+            Awarded "Best Student in M.Sc. Computer Science" for highest grade.
+          </li>
+        </ul>
+        <div className={styles.imageContainer}>
+          <ImageComponent
+            src={"/images/me.jpg"}
+            alt={"Image of me at my M.Sc Computer Science graduation."}
+            width={400}
+            height={400}
+          />
+        </div>
+      </div>
     </div>
     <div className={styles.aboutSection}>
       <h3>Extra Curricula Achievments</h3>
       <h4>Carnival RAG</h4>
-      <ul>
-        <li>
-          Charity Skydive- Raised £409.85 for The Children's Society and
-          participated in a tandem skydive. Awarded “Skydiver of the Year
-          2014/15” for all round enthusiasm and determination of fundraising.
+      <div className={classNames(styles.item, styles.flipped)}>
+        <h4 className={styles.header}>Charity Skydive</h4>
+        <ul className={styles.description}>
+          <li>
+            Raised <span className={styles.bold}>£409.85</span> for The
+            Children's Society and participated in a tandem skydive.
+          </li>
+          <li>
+            Awarded “Skydiver of the Year 2014/15” for all round enthusiasm and
+            determination of fundraising.
+          </li>
+        </ul>
+        <div className={styles.imageContainer}>
           <ImageComponent
             alt={"My charity skydive."}
             src={"/images/skydive.jpg"}
+            width={400}
+            height={400}
           />
-        </li>
-        <li>
-          Climbing Kilimanjaro- Managed 24 students throughout the academic year
-          to fundraise £68,254.79 for The Meningitis Research Foundation.
-          Recruited the team, organised socials and group fundraising events,
-          managed the team’s fundraising and also kept the team morale high.
-          Awarded “Outstanding Charity Leader of the Year 2015/16”.
-          <ImageComponent
-            alt={"Kilimanjaro group fundraising in a bucket shake."}
-            src={"/images/kili_fundraising.jpg"}
+        </div>
+      </div>
+
+      <div className={classNames(styles.item, styles.flipped)}>
+        <h4 className={styles.header}>Climbed Kilimanjaro for Charity</h4>
+        <ul className={styles.description}>
+          <li>
+            Managed 24 students throughout the academic year to fundraise{" "}
+            <span className={styles.bold}>£68,254.79</span> for The Meningitis
+            Research Foundation. Recruited the team, organised socials and group
+            fundraising events, managed the team’s fundraising and also kept the
+            team morale high.
+          </li>
+          <li>Awarded “Outstanding Charity Leader of the Year 2015/16”.</li>
+        </ul>
+        <div className={styles.imageContainer}>
+          <Swiper
+            loop={true}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+          >
+            <SwiperSlide>
+              <ImageComponent
+                alt={"Kilimanjaro group fundraising in a bucket shake."}
+                src={"/images/kili_fundraising.jpg"}
+                height={400}
+                width={400}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ImageComponent
+                alt={"Kilimanjaro group at base camp."}
+                src={"/images/kili_base.jpg"}
+                height={400}
+                width={400}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ImageComponent
+                alt={"Kilimanjaro group at the summit."}
+                src={"/images/kili_summit.jpg"}
+                height={400}
+                width={400}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div className={styles.video}>
+          <iframe
+            className={styles.iframe}
+            src="https://www.youtube.com/embed/qlAt8pHrFtI"
+            title="Birmingham Climbs Kilimanjaro 2016"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
           />
-          <ImageComponent
-            alt={"Kilimanjaro group at base camp."}
-            src={"/images/kili_base.jpg"}
-          />
-          <ImageComponent
-            alt={"Kilimanjaro group at the summit."}
-            src={"/images/kili_summit.jpg"}
-          />
-          <div className={styles.video}>
-            <iframe
-              width="480"
-              height="270"
-              src="https://www.youtube.com/embed/qlAt8pHrFtI"
-              title="Birmingham Climbs Kilimanjaro 2016"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <p>
-            As part of my own training and fundraising for the Kilimanjaro
-            challenge I took part in:
-          </p>
-          <ul>
-            <li>
-              Tough Guy 2016:
+        </div>
+      </div>
+
+      <div className={classNames(styles.item, styles.flipped)}>
+        <h4 className={styles.header}>Tough Guy 2016 and 2018</h4>
+        <ul className={styles.description}>
+          <li>
+            Took part in Tough Guy 2016 as part of my fundraising and training
+            for Kilimanjaro.
+          </li>
+          <li>
+            I had such a great time that I ended up attending Tough Guy 2018
+            with a few more friends!
+          </li>
+        </ul>
+        <div className={styles.imageContainer}>
+          <Swiper
+            loop={true}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+          >
+            <SwiperSlide>
               <ImageComponent
                 alt={"Myself and my friend taking part in tough guy 2016."}
                 src={"/images/tough_guy16.jpg"}
+                height={400}
+                width={400}
               />
-              I had such a great time that I ended up attending Tough Guy 2017
-              with a few more friends!
+            </SwiperSlide>
+            <SwiperSlide>
               <ImageComponent
-                alt={"Myself and my friend taking part in tough guy 2017."}
-                src={"/images/tough_guy17.jpg"}
+                alt={"Myself and my friend taking part in tough guy 2018."}
+                src={"/images/tough_guy18.jpg"}
+                height={400}
+                width={400}
               />
-            </li>
-            <li>
-              Coventry Half Marathon 2016
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
+
+      <div className={classNames(styles.item, styles.flipped)}>
+        <h4 className={styles.header}>Tough Guy 2016 and 2018</h4>
+        <ul className={styles.description}>
+          <li>
+            Ran Coventry half marathon in 2016 as part of my fundraising and
+            training for Kilimanjaro.
+          </li>
+          <li>Also ran it in 2017 for MathSoc!</li>
+        </ul>
+        <div className={styles.imageContainer}>
+          <Swiper
+            loop={true}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+          >
+            <SwiperSlide>
               <ImageComponent
                 alt={"A group of friends running coventry half marathon 2016."}
                 src={"/images/covhalf_16.jpg"}
+                height={400}
+                width={400}
               />
-            </li>
-          </ul>
-        </li>
-        <li>
-          Treasurer for Carnival RAG 2016- The society raised more funds from
-          in-house events in Autumn 2016 than the entire academic year 2015/16.
-          Furthermore, the society was highly commended as “Outstanding
-          Volunteering Group” at the 2017 Guild Awards.
+            </SwiperSlide>
+            <SwiperSlide>
+              <ImageComponent
+                alt={"A group of friends running coventry half marathon 2016."}
+                src={"/images/covhalf_17.jpg"}
+                height={400}
+                width={400}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
+
+      <div className={classNames(styles.item, styles.flipped)}>
+        <h4 className={styles.header}>Treasurer for Carnival RAG 2016/17</h4>
+        <ul className={styles.description}>
+          <li>
+            The society raised more funds from in-house events in Autumn 2016
+            than the entire academic year 2015/16.
+          </li>
+          <li>
+            The society was highly commended as “Outstanding Volunteering Group”
+            at the 2017 Guild Awards.
+          </li>
+        </ul>
+        <div className={styles.imageContainer}>
           <ImageComponent
             alt={"Some of the Carnival RAG committee."}
             src={"/images/rag.jpg"}
+            width={400}
+            height={400}
           />
-        </li>
-      </ul>
+        </div>
+      </div>
+
       <h4>MathSoc</h4>
-      <ul>
-        <li>
-          President- Running this award winning society improved organisational
-          and leadership skills. Increased participation in all events,
-          increased overall membership by 40\%, introduced a new volunteering
-          scheme which gives members the opportunity to gain experience in
-          teaching and mentoring, held new events for our members to engage
-          socially and also raised more money for the society’s charity of the
-          year than ever before. Awarded first ever Guild Award for the “Most
-          Improved Society 2017”. The society also won 3 awards at the EPS
-          Awards 2017: Volunteer of the Year (to the Volunteering Officer),
-          Diversity and Inclusion Award and Role Model of the Year (awarded to
-          myself).
+      <div className={classNames(styles.item, styles.flipped)}>
+        <h4 className={styles.header}>
+          President of the Maths Society 2016/17
+        </h4>
+        <ul className={styles.description}>
+          <li>
+            Running this award winning society improved organisational and
+            leadership skills.
+          </li>
+          <li>
+            Increased participation in all events, increased overall membership
+            by 40%, introduced a new volunteering scheme which gives members the
+            opportunity to gain experience in teaching and mentoring, held new
+            events for our members to engage socially and also raised more money
+            for the society’s charity of the year than ever before.
+          </li>
+          <li>
+            Awarded first ever Guild Award for the “Most Improved Society 2017”.
+            The society also won 3 awards at the EPS Awards 2017: Volunteer of
+            the Year (to the Volunteering Officer), Diversity and Inclusion
+            Award and Role Model of the Year (awarded to myself).
+          </li>
+        </ul>
+        <div className={styles.imageContainer}>
           <ImageComponent
             alt={
               "Mathsoc committee accepting our award at the guild awards for most improved society."
             }
             src={"/images/mathsoc.jpg"}
+            width={400}
+            height={400}
           />
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
+
     <div className={styles.aboutSection}>
-      <h3>HOBBIES AND INTERESTS</h3>
-      <p>
-        I enjoy reading sci-fi novels, running and cooking. In my spare time I
-        enjoy playing a range of video games and working on personal projects.
-      </p>
-      <p>I've done a bunjee jump too (twice!).</p>
+      <h3>Hobbies and Interests</h3>
+      <div className={styles.hobbies}>
+        <ul className={styles.description}>
+          <li>
+            I enjoy reading sci-fi novels, running and cooking. In my spare time
+            I enjoy playing a range of video games and working on personal
+            projects.
+          </li>
+          <li>I'm going to be running the 2023 Brighton Marathon!</li>
+          <li>I've done a bunjee jump too (twice!).</li>
+        </ul>
+        <div className={styles.video}>
+          <iframe
+            className={styles.iframe}
+            src="https://www.youtube.com/embed/XoRlQP1T65g"
+            title="300ft Bungee Jump"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
     </div>
   </section>
 );

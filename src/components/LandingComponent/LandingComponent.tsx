@@ -40,35 +40,34 @@ const LandingComponent: React.FC<Props> = ({}) => (
       </li>
       <li>
         <span className={styles.bold}>Skills</span>- Programming languages I
-        have an understanding of, described by competancy.
+        have an understanding of, rated by proficiency.
       </li>
       <li>
         <span className={styles.bold}>Projects</span>- Breakdown of many
         different projects I've worked on. Most are small projects but valuable
         regardless to my learning and understanding of programming.
       </li>
-      <li>
-        <span className={styles.bold}>Contact</span>- My contact details should
-        you wish to get in touch.
-      </li>
     </ul>
-    <p>
-      If you want the short version, please refer to my CV{" "}
-      <Link className={styles.link} target={"_blank"} href="/Ed_Wong_CV.pdf">
-        here.
-      </Link>
-    </p>
-    <p>Here are my contact details:</p>
+    <p>Contact details and links:</p>
     <ul>
       {contactArray.map((contact, idx) => (
-        <li key={idx}>
+        <li className={styles.contactItem} key={idx}>
           {contact.type}
-          <Link href={contact.href} target={"_blank"}>
+          <Link className={styles.link} href={contact.href} target={"_blank"}>
             {contact.text}
           </Link>
         </li>
       ))}
     </ul>
+    <p>
+      If you want the short version, please refer to my CV below, or download it{" "}
+      <Link className={styles.link} target={"_blank"} href="/Ed_Wong_CV.pdf">
+        here.
+      </Link>
+    </p>
+    <div className={styles.cvContainer}>
+      <object className={styles.cv} data={"/Ed_Wong_CV.pdf"}></object>
+    </div>
   </div>
 );
 
