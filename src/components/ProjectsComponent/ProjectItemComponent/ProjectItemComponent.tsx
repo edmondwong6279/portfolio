@@ -12,6 +12,7 @@ export type Props = {
 
 const ProjectItemComponent: React.FC<Props> = ({ projectItem, idx }) => (
   <div className={classNames(styles.gridItem, { [styles.noLine]: idx === 0 })}>
+    <hr className={styles.line} />
     <div className={styles.gridTitle}>{projectItem.title}</div>
     <div className={styles.gridImage}>
       <ImageComponent alt={""} src={projectItem.image} />

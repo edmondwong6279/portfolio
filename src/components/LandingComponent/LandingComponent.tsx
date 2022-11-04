@@ -15,7 +15,7 @@ const contactArray = [
   {
     type: "LinkedIn: ",
     href: "https://www.linkedin.com/in/edmondwong6279/",
-    text: "linkedin.com/in/edmondwong6279/",
+    text: "in/edmondwong6279/",
   },
   {
     type: "Github: ",
@@ -26,32 +26,34 @@ const contactArray = [
 
 const LandingComponent: React.FC<Props> = ({}) => (
   <div className={styles.container}>
-    <h2>My name is ed and welcome to my portfolio.</h2>
-    <p>
+    <h2 className={styles.bigHeader}>
+      My name is Ed and welcome to my portfolio.
+    </h2>
+    <p className={styles.text}>
       I am an enthuisastic programmer with a wide range of skills. This
       portfolio demonstrates many of the skills I have attained from a few of
       the projects that I've worked on.
     </p>
-    <p>Each section is described as follows:</p>
+    <p className={styles.text}>Each section is described as follows:</p>
     <ul>
-      <li>
+      <li className={styles.text}>
         <span className={styles.bold}>About</span>- General information about
         me, interests, hobbies and achievements in my life that I'm proud of!
       </li>
-      <li>
+      <li className={styles.text}>
         <span className={styles.bold}>Skills</span>- Programming languages I
         have an understanding of, rated by proficiency.
       </li>
-      <li>
+      <li className={styles.text}>
         <span className={styles.bold}>Projects</span>- Breakdown of many
         different projects I've worked on. Most are small projects but valuable
         regardless to my learning and understanding of programming.
       </li>
     </ul>
-    <p>Contact details and links:</p>
+    <p className={styles.text}>Contact details and links:</p>
     <ul>
       {contactArray.map((contact, idx) => (
-        <li className={styles.contactItem} key={idx}>
+        <li className={styles.text} key={idx}>
           {contact.type}
           <Link className={styles.link} href={contact.href} target={"_blank"}>
             {contact.text}
@@ -59,18 +61,13 @@ const LandingComponent: React.FC<Props> = ({}) => (
         </li>
       ))}
     </ul>
-    <p>
-      If you want the short version, please refer to my CV below, or download it{" "}
-      <Link className={styles.link} target={"_blank"} href="/Ed_Wong_CV.pdf">
-        here.
-      </Link>
+    <p className={styles.text}>
+      If you want the short version, please refer to my CV below:
     </p>
     <div className={styles.cvContainer}>
-      <object
-        className={styles.cv}
-        type="application/pdf"
-        data={"/Ed_Wong_CV.pdf"}
-      ></object>
+      <Link className={styles.link} target={"_blank"} href="/Ed_Wong_CV.pdf">
+        Ed's Curriculum Vitae
+      </Link>
     </div>
   </div>
 );

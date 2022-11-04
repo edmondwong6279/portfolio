@@ -17,7 +17,7 @@ export type Props = {
 const AboutComponent: React.FC<Props> = ({}) => (
   <section className={styles.container}>
     <div className={styles.aboutSection}>
-      <h3>Education Achievements</h3>
+      <h3 className={styles.bigHeader}>Education Achievements</h3>
       <div className={styles.item}>
         <h4 className={styles.header}>
           B.Sci Mathematics
@@ -25,12 +25,14 @@ const AboutComponent: React.FC<Props> = ({}) => (
         </h4>
         <ul className={styles.description}>
           <li>
-            Awarded the George Watson Scholarship for outstanding A-Level
-            results.
+            Awarded the{" "}
+            <span className={styles.bold}>George Watson Scholarship</span> for
+            outstanding A-Level results.
           </li>
           <li>
-            Awarded ”Best Presented Project” in Mathematical Modelling and
-            Problem Solving Module.
+            Awarded{" "}
+            <span className={styles.bold}>"Best Presented Project"</span> in
+            Mathematical Modelling and Problem Solving Module.
           </li>
         </ul>
         <div className={styles.imageContainer}>
@@ -50,11 +52,18 @@ const AboutComponent: React.FC<Props> = ({}) => (
         </h4>
         <ul className={styles.description}>
           <li>
-            Awarded the Distinguished Alumni Scholarship for excellent
-            undergraduate degree.
+            Awarded the{" "}
+            <span className={styles.bold}>
+              Distinguished Alumni Scholarship
+            </span>{" "}
+            for excellent undergraduate degree.
           </li>
           <li>
-            Awarded "Best Student in M.Sc. Computer Science" for highest grade.
+            Awarded{" "}
+            <span className={styles.bold}>
+              "Best Student in M.Sc. Computer Science"
+            </span>{" "}
+            for the highest grade in the whole cohort.
           </li>
         </ul>
         <div className={styles.imageContainer}>
@@ -68,7 +77,7 @@ const AboutComponent: React.FC<Props> = ({}) => (
       </div>
     </div>
     <div className={styles.aboutSection}>
-      <h3>Extra Curricula Achievments</h3>
+      <h3 className={styles.bigHeader}>Extra Curricula Achievements</h3>
       <h4>Carnival RAG</h4>
       <div className={classNames(styles.item, styles.flipped)}>
         <h4 className={styles.header}>Charity Skydive</h4>
@@ -78,8 +87,9 @@ const AboutComponent: React.FC<Props> = ({}) => (
             Children's Society and participated in a tandem skydive.
           </li>
           <li>
-            Awarded “Skydiver of the Year 2014/15” for all round enthusiasm and
-            determination of fundraising.
+            Awarded{" "}
+            <span className={styles.bold}>“Skydiver of the Year 2014/15”</span>{" "}
+            for all round enthusiasm and determination of fundraising.
           </li>
         </ul>
         <div className={styles.imageContainer}>
@@ -98,11 +108,19 @@ const AboutComponent: React.FC<Props> = ({}) => (
           <li>
             Managed 24 students throughout the academic year to fundraise{" "}
             <span className={styles.bold}>£68,254.79</span> for The Meningitis
-            Research Foundation. Recruited the team, organised socials and group
-            fundraising events, managed the team’s fundraising and also kept the
-            team morale high.
+            Research Foundation.
           </li>
-          <li>Awarded “Outstanding Charity Leader of the Year 2015/16”.</li>
+          <li>
+            Recruited the team, organised socials and group fundraising events,
+            managed the team's fundraising and also kept the team morale high.
+          </li>
+          <li>
+            Awarded{" "}
+            <span className={styles.bold}>
+              “Outstanding Charity Leader of the Year 2015/16”
+            </span>
+            .
+          </li>
         </ul>
         <div className={styles.imageContainer}>
           <Swiper
@@ -193,7 +211,7 @@ const AboutComponent: React.FC<Props> = ({}) => (
       </div>
 
       <div className={classNames(styles.item, styles.flipped)}>
-        <h4 className={styles.header}>Tough Guy 2016 and 2018</h4>
+        <h4 className={styles.header}>Coventry Half Marathon 2016 and 2017</h4>
         <ul className={styles.description}>
           <li>
             Ran Coventry half marathon in 2016 as part of my fundraising and
@@ -238,7 +256,10 @@ const AboutComponent: React.FC<Props> = ({}) => (
             than the entire academic year 2015/16.
           </li>
           <li>
-            The society was highly commended as “Outstanding Volunteering Group”
+            The society was highly commended as{" "}
+            <span className={styles.bold}>
+              “Outstanding Volunteering Group”
+            </span>{" "}
             at the 2017 Guild Awards.
           </li>
         </ul>
@@ -259,21 +280,26 @@ const AboutComponent: React.FC<Props> = ({}) => (
         </h4>
         <ul className={styles.description}>
           <li>
-            Running this award winning society improved organisational and
-            leadership skills.
+            Increased participation in all events and increased overall
+            membership by 40%.
           </li>
           <li>
-            Increased participation in all events, increased overall membership
-            by 40%, introduced a new volunteering scheme which gives members the
-            opportunity to gain experience in teaching and mentoring, held new
-            events for our members to engage socially and also raised more money
-            for the society’s charity of the year than ever before.
+            Introduced a new volunteering scheme which gave members the
+            opportunity to gain experience in teaching and mentoring.
           </li>
           <li>
-            Awarded first ever Guild Award for the “Most Improved Society 2017”.
-            The society also won 3 awards at the EPS Awards 2017: Volunteer of
-            the Year (to the Volunteering Officer), Diversity and Inclusion
-            Award and Role Model of the Year (awarded to myself).
+            Held new events for our members to engage socially and also raised
+            more money for the society's charity of the year than ever before.
+          </li>
+          <li>
+            Awarded first ever Guild Award for the{" "}
+            <span className={styles.bold}>“Most Improved Society 2017”</span>.
+            The society also won 3 awards at the EPS Awards 2017:{" "}
+            <span className={styles.bold}>Volunteer of the Year</span> (to the
+            Volunteering Officer),{" "}
+            <span className={styles.bold}>Diversity and Inclusion Award</span>{" "}
+            and <span className={styles.bold}>Role Model of the Year</span>{" "}
+            (awarded to myself).
           </li>
         </ul>
         <div className={styles.imageContainer}>
@@ -290,7 +316,7 @@ const AboutComponent: React.FC<Props> = ({}) => (
     </div>
 
     <div className={styles.aboutSection}>
-      <h3>Hobbies and Interests</h3>
+      <h3 className={styles.bigHeader}>Hobbies and Interests</h3>
       <div className={styles.hobbies}>
         <ul className={styles.description}>
           <li>

@@ -8,7 +8,7 @@ export type Props = {
 
 const ProjectsComponent: React.FC<Props> = ({}) => (
   <div className={styles.container}>
-    <div>
+    <div className={styles.text}>
       Here are a bunch of my projects I have worked on. I have provided links to
       any deployed sites and the corresponding source code where I can.
     </div>

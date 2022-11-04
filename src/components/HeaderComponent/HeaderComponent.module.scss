@@ -16,11 +16,7 @@
 	}
 
 	.hr {
-		width: 100%;
-		border: none;
-		border-radius: 50%;
-		margin: 5px 0;
-		background-color: $primary;
+		@include line;
 	}
 }
 
@@ -28,32 +24,21 @@
 	@include container;
 
 	display: flex;
-	max-width: 1000px;
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 20px;
 
 	.navItem {
+		@include link;
+
 		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 5px 10px;
-		border-radius: 5px;
-		cursor: pointer;
-		font-size: 20px;
-		font-weight: 500;
+		font-size: 14px;
 		text-transform: uppercase;
 		transition: all 0.2s ease-in-out;
 		user-select: none;
 
-		&.highlight {
-			background-color: $secondary;
-			font-weight: 900;
-		}
-
-		&.navItem:hover:not(.highlight) {
-			background-color: $tertiary;
+		@include tablet {
+			font-size: 20px;
 		}
 
 		.underline {
@@ -61,17 +46,8 @@
 			right: 0;
 			bottom: -20px;
 			left: 0;
-			height: 3px;
-			border: none;
-			border-radius: 50%;
-			background-color: $primary;
-		}
-	}
 
-	.divider {
-		width: 0;
-		height: 20px;
-		border: none;
-		border-right: 1px solid $primary;
+			@include line(4px);
+		}
 	}
 }

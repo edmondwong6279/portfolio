@@ -30,7 +30,7 @@ const HeaderComponent: React.FC<Props> = ({
         transition: { duration: totalDuration * 0.6, times: [0, 0.6, 1] },
       }}
     >
-      <h1 onClick={() => setSection(0)}>ed wong</h1>
+      <h1 onClick={() => setSection(0)}>Ed Wong</h1>
       <motion.hr
         className={styles.hr}
         animate={{
@@ -51,32 +51,28 @@ const HeaderComponent: React.FC<Props> = ({
       animate={{ opacity: [0, 1], y: ["-20px", "0px"] }}
       transition={{ delay: totalDuration * 0.6 }}
     >
-      {sectionArray.map((navItem, idx) => {
-        if (idx > 0) {
-          return (
-            <div
-              className={classNames(styles.navItem, {
-                [styles.highlight]: section === idx,
-              })}
-              onClick={() => setSection(section === idx ? 0 : idx)}
-              key={idx}
-            >
-              {navItem.name}
-              <AnimatePresence>
-                {section === idx && (
-                  <motion.div
-                    className={styles.underline}
-                    layoutId="underline"
-                    initial={{ opacity: 0 }}
-                    exit={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  />
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        }
-      })}
+      {sectionArray.map((navItem, idx) => (
+        <div
+          className={classNames(styles.navItem, {
+            [styles.highlight]: section === idx,
+          })}
+          onClick={() => setSection(idx)}
+          key={idx}
+        >
+          {navItem.name}
+          <AnimatePresence>
+            {section === idx && (
+              <motion.div
+                className={styles.underline}
+                layoutId="underline"
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              />
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
     </motion.nav>
   </>
 );

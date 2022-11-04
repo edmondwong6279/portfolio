@@ -10,16 +10,17 @@ import { personalArray, workArray } from "./projectArrays";
 
 const ProjectArrayComponent: React.FC<Props> = ({}) => (
   <div className={styles.container}>
-    <h3>Personal Projects</h3>
-    <div className={styles.gridContainer}>
-      {personalArray.map((personalItem, idx) => (
-        <ProjectItemComponent projectItem={personalItem} idx={idx} key={idx} />
-      ))}
-    </div>
-    <h3>Work Projects</h3>
+    <h3 className={styles.bigHeader}>Work Projects</h3>
     <div className={styles.gridContainer}>
       {workArray.map((workItem, idx) => (
         <ProjectItemComponent projectItem={workItem} idx={idx} key={idx} />
+      ))}
+    </div>
+    <hr className={styles.divider} />
+    <h3 className={styles.bigHeader}>Personal Projects</h3>
+    <div className={styles.gridContainer}>
+      {personalArray.map((personalItem, idx) => (
+        <ProjectItemComponent projectItem={personalItem} idx={idx} key={idx} />
       ))}
     </div>
   </div>

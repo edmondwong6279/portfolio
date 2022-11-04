@@ -1,12 +1,12 @@
 @import "src/styles/main";
 
 .gridItem {
+	position: relative;
 	display: grid;
 	width: 100%;
 	align-items: center;
 	justify-content: center;
 	padding: 10px 0;
-	border-top: 2px $primary solid;
 	grid-template-areas:
 		"title"
 		"image"
@@ -23,20 +23,25 @@
 			"links tags";
 	}
 
+	.line {
+		@include line(3px);
+
+		position: absolute;
+		top: 0;
+
+		@include tablet {
+			top: 10px;
+		}
+	}
+
 	&.noLine {
 		border-top: none;
 	}
 
 	.gridTitle {
-		margin: 10px 30px;
-		font-size: 20px;
-		font-weight: 600;
 		grid-area: title;
-		text-align: center;
 
-		@include tablet {
-			font-size: 30px;
-		}
+		@include smallHeader;
 	}
 
 	.gridImage {
@@ -99,7 +104,11 @@
 			gap: 10px;
 
 			.gridTag {
-				@include link;
+				padding: 5px 10px;
+				border: 2px $primary solid;
+				border-radius: 5px;
+				background-color: transparent;
+				font-weight: 700;
 			}
 		}
 	}

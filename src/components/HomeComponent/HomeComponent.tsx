@@ -14,7 +14,7 @@ export type Props = {
 
 const sectionArray = [
   {
-    name: "Landing",
+    name: "Home",
     component: <LandingComponent />,
   },
   {
