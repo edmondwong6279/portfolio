@@ -59,7 +59,8 @@ const SkillsComponent: React.FC<Props> = ({}) => {
       <h2>Skills</h2>
       <p>
         Here is a breakdown of my proficiancies in different languages and
-        frameworks.
+        frameworks. The scale goes from beginner to intermediate proficiancy
+        (Work in progress).
       </p>
       {/* <p>TODO Flesh this out.</p> */}
       {allSVG.map((resultSVG, idx) => (

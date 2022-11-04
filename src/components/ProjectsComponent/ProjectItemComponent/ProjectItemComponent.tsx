@@ -1,6 +1,6 @@
 import styles from "./ProjectItemComponent.module.scss";
 import React from "react";
-import ImageComponent from "../../ImageComponent";
+// import ImageComponent from "../../ImageComponent";
 
 import { projectType } from "../ProjectArrayComponent/projectArrays";
 import classNames from "classnames";
@@ -15,7 +15,11 @@ const ProjectItemComponent: React.FC<Props> = ({ projectItem, idx }) => (
     <hr className={styles.line} />
     <div className={styles.gridTitle}>{projectItem.title}</div>
     <div className={styles.gridImage}>
-      <ImageComponent alt={""} src={projectItem.image} />
+      {/* <ImageComponent alt={""} src={projectItem.image} /> */}
+      {/* This causes flickering when there's multiple videos on screen*/}
+      <video className={styles.vid} controls>
+        <source src={projectItem.image} type={"video/mp4"} />
+      </video>
     </div>
     <div className={styles.linkContainer}>
       {projectItem.projectLink && (

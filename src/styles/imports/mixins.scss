@@ -83,7 +83,7 @@ $laptop: 1024px;
 	width: 100%;
 	height: $height;
 	border: none;
-	border-radius: 50%;
+	border-radius: $height/2;
 	margin: 5px 0;
 	background-color: $primary;
 }

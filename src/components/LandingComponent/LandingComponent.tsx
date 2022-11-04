@@ -22,6 +22,11 @@ const contactArray = [
     href: "https://github.com/edmondwong6279",
     text: "github.com/edmondwong6279",
   },
+  {
+    type: "CV: ",
+    href: "/Ed_Wong_CV.pdf",
+    text: "My CV",
+  },
 ];
 
 const LandingComponent: React.FC<Props> = ({}) => (
@@ -61,14 +66,6 @@ const LandingComponent: React.FC<Props> = ({}) => (
         </li>
       ))}
     </ul>
-    <p className={styles.text}>
-      If you want the short version, please refer to my CV below:
-    </p>
-    <div className={styles.cvContainer}>
-      <Link className={styles.link} target={"_blank"} href="/Ed_Wong_CV.pdf">
-        Ed's Curriculum Vitae
-      </Link>
-    </div>
   </div>
 );
 

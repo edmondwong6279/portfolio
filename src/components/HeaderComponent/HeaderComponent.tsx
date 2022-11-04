@@ -35,7 +35,6 @@ const HeaderComponent: React.FC<Props> = ({
         className={styles.hr}
         animate={{
           opacity: [0, 1],
-          height: ["0px", "5px"],
           width: ["0%", "100%"],
           transition: {
             delay: totalDuration * 0.6,

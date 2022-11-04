@@ -7,10 +7,12 @@ export type projectType = {
   tags: string[];
 };
 
+const ext = ".mp4";
+
 export const workArray: projectType[] = [
   {
     title: "xenonarc",
-    image: "/images/projects/xenon.gif",
+    image: `/images/projects/xenon${ext}`,
     description: (
       <>
         {/* Descibe project */}
@@ -36,7 +38,7 @@ export const workArray: projectType[] = [
   },
   {
     title: "Shoe Generator",
-    image: "/images/projects/shoes.gif",
+    image: `/images/projects/shoes${ext}`,
     description: (
       <>
         {/* Descibe project */}
@@ -82,33 +84,8 @@ export const workArray: projectType[] = [
     ],
   },
   {
-    title: "Rhinostics ROI Calculator",
-    image: "/images/projects/rhino.gif",
-    description: (
-      <>
-        {/* Descibe project */}
-        <p>
-          In this project, the user inputs information in a form and receives a
-          custom page based on their answers in the form.
-        </p>
-        {/* Libraries used */}
-        <p>This was a fairly basic project that.</p>
-        {/* Things learned */}
-        <p>This project helped me to:</p>
-        <ul>
-          <li>
-            Work efficiently and quickly on the project in a relatively small
-            time scale.
-          </li>
-        </ul>
-      </>
-    ),
-    projectLink: "https://rhinostics.com/roi/",
-    tags: ["data visualisation", "team project"],
-  },
-  {
     title: "Balderton Benchmark Tool",
-    image: "/images/projects/bald.gif",
+    image: `/images/projects/bald${ext}`,
     description: (
       <>
         {/* Descibe project */}
@@ -140,12 +117,103 @@ export const workArray: projectType[] = [
     ),
     tags: ["data visualisation", "SVG", "team project"],
   },
+  {
+    title: "Rhinostics ROI Calculator",
+    image: `/images/projects/rhino${ext}`,
+    description: (
+      <>
+        {/* Descibe project */}
+        <p>
+          In this project, the user inputs information in a form and receives a
+          custom page based on their answers.
+        </p>
+        {/* Libraries used */}
+        <p>
+          This was a fairly basic project that helped me to work to a simple
+          design but achieve the closest result to the design.
+        </p>
+        {/* Things learned */}
+        <p>This project helped me to:</p>
+        <ul>
+          <li>
+            Work efficiently and quickly on the project in a relatively small
+            time scale.
+          </li>
+        </ul>
+      </>
+    ),
+    projectLink: "https://rhinostics.com/roi/",
+    tags: ["data visualisation", "team project"],
+  },
 ];
 
 export const personalArray: projectType[] = [
   {
+    title: "Let The Words Out",
+    image: `/images/projects/ltwo${ext}`,
+    description: (
+      <>
+        <p>
+          Worked with a local band to create a promotional webpage. The user
+          types any phrase and is returned with the amount of times other users
+          have used each word in the database.
+        </p>
+        <p>
+          Initial data was scraped via a python reddit scraper and was developed
+          with React, canvas, matter-js, d3 and integrated with a PostgreSQL
+          database using knex.
+        </p>
+        <p>This project helped me to:</p>
+        <ul>
+          <li>
+            Work effectively with a client to ensure their needs were met
+            regarding functionality and design.
+          </li>
+          <li>
+            Utilise matter-js to simulate the physics of the bubbles, rendering
+            using canvas.
+          </li>
+          <li>
+            Learn how to use Knex to connect to a PostgreSQL database and
+            perform simple transactions.
+          </li>
+        </ul>
+      </>
+    ),
+    projectLink: "https://letthewordsout.com/",
+    tags: ["canvas", "matter-js", "d3", "SQL", "PostgreSQL", "solo project"],
+  },
+  {
+    title: "Bacon Snakes",
+    image: `/images/projects/snake${ext}`,
+    description: (
+      <>
+        <p>
+          Recreated the simple game of snake- but with bacon. Nothing serious,
+          just a bit of fun!
+        </p>
+        <p>
+          Uses keyboard input for movement, and tracks high scores. Also allows
+          for muiltiplayer by using websockets (coming soon). This project will
+          be public soon.
+        </p>
+        <p>This project helped me to:</p>
+        <ul>
+          <li>
+            Learn the basics of game development by implementating a game loop,
+            and separating this from the renderer.
+          </li>
+          <li>Use websockets for fast transmission of data.</li>
+        </ul>
+      </>
+    ),
+    // projectLink: "google.com",
+    // gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
+    tags: ["canvas", "game", "fun", "solo project", "web sockets"],
+  },
+  {
     title: "Covid Data Visualisation",
-    image: "/images/projects/covid.gif",
+    image: `/images/projects/covid${ext}`,
     description: (
       <>
         <p>
@@ -190,129 +258,8 @@ export const personalArray: projectType[] = [
     ],
   },
   {
-    title: "Let The Words Out",
-    image: "/images/projects/ltwo.gif",
-    description: (
-      <>
-        <p>
-          Worked with a local band to create a promotional webpage. The user
-          types any phrase and is returned with the amount of times other users
-          have used each word in the database.
-        </p>
-        <p>
-          Initial data was scraped via a python reddit scraper and was developed
-          with React, canvas, matter-js, d3 and integrated with a PostgreSQL
-          database using knex.
-        </p>
-        <p>This project helped me to:</p>
-        <ul>
-          <li>
-            Work effectively with a client to ensure their needs were met
-            regarding functionality and design.
-          </li>
-          <li>
-            Utilise matter-js to simulate the physics of the bubbles, rendering
-            using canvas.
-          </li>
-          <li>
-            Learn how to use Knex to connect to a PostgreSQL database and
-            perform simple transactions.
-          </li>
-        </ul>
-      </>
-    ),
-    projectLink: "https://letthewordsout.com/",
-    tags: ["canvas", "matter-js", "d3", "SQL", "PostgreSQL", "solo project"],
-  },
-  {
-    title: "Bacon Snakes",
-    image: "/images/projects/snake.gif",
-    description: (
-      <>
-        <p>
-          Recreated the simple game of snake- but with bacon. Nothing serious,
-          just a bit of fun! Uses keyboard input for movement, and tracks high
-          scores. Also allows for a rudimentary muiltiplayer by using websockets
-          (coming soon).
-        </p>
-        <p>
-          Recreated the simple game of snake- but with bacon. Nothing serious,
-          just a bit of fun! Uses keyboard input for movement, and tracks high
-          scores. Also allows for muiltiplayer by using websockets (coming
-          soon).
-        </p>
-        <p>This project helped me to:</p>
-        <ul>
-          <li>
-            Learn the basics of game development by implementating a game loop,
-            and separating this from the renderer.
-          </li>
-          <li>Use websockets for fast transmission of data.</li>
-        </ul>
-      </>
-    ),
-    // projectLink: "google.com",
-    gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
-    tags: ["canvas", "game", "fun", "solo project", "web sockets"],
-  },
-  {
-    title: "Drawing Tool",
-    image: "/images/projects/draw.gif",
-    description: (
-      <>
-        <p>
-          Using canvas to create a simple tool to doodle. Brush colour and size
-          is randomised.
-        </p>
-        <p>
-          Implemented using canvas again. The brush and the paint are on
-          separate canvases which allows for much better performance.
-        </p>
-        <p>This project helped me to:</p>
-        <ul>
-          <li>
-            Understanding rendering on canvas and how we can separate components
-            apart.
-          </li>
-        </ul>
-      </>
-    ),
-    projectLink: "https://drawing-tool-ew.vercel.app/",
-    gitprojectLink: "https://github.com/edmondwong6279/drawing-tool",
-    tags: ["canvas", "fun", "solo project"],
-  },
-  {
-    title: "Expanding Shapes",
-    image: "/images/projects/shapes.gif",
-    description: (
-      <>
-        <p>
-          Every click on the canvas triggers a random regualr polygon of a
-          random size, with a random easing from a predefined set of easing
-          functions, of a random colour.
-        </p>
-        <p>
-          Implemented using canvas and ensures that the shapes will always be
-          within the bounds of the canvas and never overlap outside.
-        </p>
-        <p>This project helped me to:</p>
-        <ul>
-          <li>Learn how I could optimise canvas applications.</li>
-          <li>
-            Implement the necessary maths to calculate the possible size of the
-            shapes without overlapping the border.
-          </li>
-          <li>Implement custom easing functions.</li>
-        </ul>
-      </>
-    ),
-    projectLink: "https://expanding-shapes.vercel.app/",
-    gitprojectLink: "https://github.com/edmondwong6279/expanding-shapes",
-    tags: ["canvas", "fun", "solo project"],
-  },
-  {
     title: "Simulating the Solar System",
-    image: "/images/projects/space.gif",
+    image: `/images/projects/space${ext}`,
     description: (
       <>
         {/* Descibe project */}
@@ -347,8 +294,63 @@ export const personalArray: projectType[] = [
     tags: ["cannon-es", "three-js", "fun", "solo project", "3D"],
   },
   {
+    title: "Drawing Tool",
+    image: `/images/projects/draw${ext}`,
+    description: (
+      <>
+        <p>
+          Using canvas to create a simple tool to doodle. Brush colour and size
+          is randomised.
+        </p>
+        <p>
+          Implemented using canvas again. The brush and the paint are on
+          separate canvases which allows for much better performance.
+        </p>
+        <p>This project helped me to:</p>
+        <ul>
+          <li>
+            Understanding rendering on canvas and how we can separate components
+            apart.
+          </li>
+        </ul>
+      </>
+    ),
+    projectLink: "https://drawing-tool-ew.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/drawing-tool",
+    tags: ["canvas", "fun", "solo project"],
+  },
+  {
+    title: "Expanding Shapes",
+    image: `/images/projects/shapes${ext}`,
+    description: (
+      <>
+        <p>
+          Every click on the canvas triggers a random regualr polygon of a
+          random size, with a random easing from a predefined set of easing
+          functions, of a random colour.
+        </p>
+        <p>
+          Implemented using canvas and ensures that the shapes will always be
+          within the bounds of the canvas and never overlap outside.
+        </p>
+        <p>This project helped me to:</p>
+        <ul>
+          <li>Learn how I could optimise canvas applications.</li>
+          <li>
+            Implement the necessary maths to calculate the possible size of the
+            shapes without overlapping the border.
+          </li>
+          <li>Implement custom easing functions.</li>
+        </ul>
+      </>
+    ),
+    projectLink: "https://expanding-shapes.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/expanding-shapes",
+    tags: ["canvas", "fun", "solo project"],
+  },
+  {
     title: "Space Pool",
-    image: "/images/projects/pool.gif",
+    image: `/images/projects/pool${ext}`,
     description: (
       <>
         {/* Descibe project */}
