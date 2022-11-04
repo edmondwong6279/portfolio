@@ -77,7 +77,18 @@ const HomeComponent: React.FC<Props> = ({}) => {
         ))}
       </motion.div>
       <footer className={styles.hrContainer}>
-        <hr className={styles.hr} />
+        <motion.hr
+          className={styles.hr}
+          animate={{
+            opacity: [0, 1],
+            height: ["0px", "5px"],
+            width: ["0%", "100%"],
+            transition: {
+              delay: totalDuration * 0.6,
+              duration: totalDuration * 0.6,
+            },
+          }}
+        />
       </footer>
     </div>
   );
