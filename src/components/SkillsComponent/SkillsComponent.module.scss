@@ -3,6 +3,10 @@
 .container {
 	width: 100%;
 
+	.bigHeader {
+		@include bigHeader;
+	}
+
 	.graphContainer {
 		display: flex;
 		flex-direction: column;

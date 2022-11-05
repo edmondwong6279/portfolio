@@ -7,6 +7,7 @@ import ProjectsComponent from "../ProjectsComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import HeaderComponent from "../HeaderComponent";
 import classNames from "classnames";
+import getConfig from "next/config";
 
 export type Props = {
   emptyProp?: boolean;
@@ -33,11 +34,44 @@ const totalDuration = 2;
 const HomeComponent: React.FC<Props> = ({}) => {
   const [section, setSection] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [latestCommit, setLatestCommit] = useState("");
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrolled(window.scrollY > 0);
     });
+  }, []);
+
+  useEffect(() => {
+    const getMessage = async () => {
+      const { publicRuntimeConfig } = getConfig();
+
+      const modifiedDate = new Date(
+        publicRuntimeConfig.modifiedDate
+      ).toString();
+
+      try {
+        const res1 = await fetch(
+          "https://api.github.com/repos/edmondwong6279/portfolio/git/refs/heads/main"
+        );
+        const blobbed1 = await res1.blob();
+        const parsed1 = await blobbed1.text();
+        const res1json = await JSON.parse(parsed1);
+
+        const res2 = await fetch(res1json.object.url);
+        const blobbed2 = await res2.blob();
+        const parsed2 = await blobbed2.text();
+        const res2json = await JSON.parse(parsed2);
+
+        setLatestCommit(`Last updated: ${modifiedDate} -- ${res2json.message}`);
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error(
+          `Error fetching latest commit messages (Repo may not be public): ${e}`
+        );
+      }
+    };
+    getMessage();
   }, []);
 
   return (
@@ -88,6 +122,7 @@ const HomeComponent: React.FC<Props> = ({}) => {
             },
           }}
         />
+        {latestCommit}
       </footer>
     </div>
   );

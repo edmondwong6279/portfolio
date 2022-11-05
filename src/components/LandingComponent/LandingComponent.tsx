@@ -15,7 +15,7 @@ const contactArray = [
   {
     type: "LinkedIn: ",
     href: "https://www.linkedin.com/in/edmondwong6279/",
-    text: "in/edmondwong6279/",
+    text: "edmondwong6279",
   },
   {
     type: "Github: ",
@@ -26,6 +26,11 @@ const contactArray = [
     type: "CV: ",
     href: "/Ed_Wong_CV.pdf",
     text: "My CV",
+  },
+  {
+    type: "Portfolio repo: ",
+    href: "https://github.com/edmondwong6279/portfolio",
+    text: "github.com/edmondwong6279/portfolio",
   },
 ];
 
@@ -38,6 +43,9 @@ const LandingComponent: React.FC<Props> = ({}) => (
       I am an enthuisastic programmer with a wide range of skills. This
       portfolio demonstrates many of the skills I have attained from a few of
       the projects that I've worked on.
+    </p>
+    <p className={styles.text}>
+      This application was created using next.js and is regularly updated.
     </p>
     <p className={styles.text}>Each section is described as follows:</p>
     <ul>

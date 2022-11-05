@@ -56,7 +56,7 @@ const SkillsComponent: React.FC<Props> = ({}) => {
 
   return (
     <div className={styles.container} ref={areaRef}>
-      <h2>Skills</h2>
+      <h2 className={styles.bigHeader}>Skills</h2>
       <p>
         Here is a breakdown of my proficiancies in different languages and
         frameworks. The scale goes from beginner to intermediate proficiancy
