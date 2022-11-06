@@ -7,6 +7,10 @@
 		@include bigHeader;
 	}
 
+	.text {
+		@include smallText;
+	}
+
 	.graphContainer {
 		display: flex;
 		flex-direction: column;

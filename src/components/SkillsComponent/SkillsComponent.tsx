@@ -57,9 +57,10 @@ const SkillsComponent: React.FC<Props> = ({}) => {
   return (
     <div className={styles.container} ref={areaRef}>
       <h2 className={styles.bigHeader}>Skills</h2>
-      <p>
-        Here is a breakdown of my proficiancies in different languages and
-        frameworks, from beginner to intermediate. (Work in progress).
+      <p className={styles.text}>
+        Here is a breakdown of my proficiancies in different languages,
+        frameworks and libraries, from beginner to intermediate. (Work in
+        progress).
       </p>
       {/* <p>TODO Flesh this out.</p> */}
       {allSVG.map((resultSVG, idx) => (
