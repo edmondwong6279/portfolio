@@ -77,7 +77,7 @@ const AboutComponent: React.FC<Props> = ({}) => (
       </div>
     </div>
     <div className={styles.aboutSection}>
-      <h3 className={styles.bigHeader}>Extra Curricula Achievements</h3>
+      <h3 className={styles.bigHeader}>Extra Curricular Achievements</h3>
       <h4>Carnival RAG</h4>
       <div className={classNames(styles.item, styles.flipped)}>
         <h4 className={styles.header}>Charity Skydive</h4>

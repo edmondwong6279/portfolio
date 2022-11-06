@@ -1,6 +1,7 @@
 import styles from "./LandingComponent.module.scss";
 import React from "react";
 import Link from "next/link";
+import classNames from "classnames";
 
 export type Props = {
   emptyProp?: boolean;
@@ -30,7 +31,7 @@ const contactArray = [
   {
     type: "Portfolio repo: ",
     href: "https://github.com/edmondwong6279/portfolio",
-    text: "github.com/edmondwong6279/portfolio",
+    text: "portfolio repo",
   },
 ];
 
@@ -40,12 +41,13 @@ const LandingComponent: React.FC<Props> = ({}) => (
       My name is Ed and welcome to my portfolio.
     </h2>
     <p className={styles.text}>
-      I am an enthuisastic programmer with a wide range of skills. This
+      I am an enthusiastic programmer with a wide range of skills. This
       portfolio demonstrates many of the skills I have attained from a few of
       the projects that I've worked on.
     </p>
     <p className={styles.text}>
-      This application was created using next.js and is regularly updated.
+      This application was created using next.js and is fully responsive. It is
+      regularly updated, and the latest commit can be found at the footer.
     </p>
     <p className={styles.text}>Each section is described as follows:</p>
     <ul>
@@ -64,9 +66,9 @@ const LandingComponent: React.FC<Props> = ({}) => (
       </li>
     </ul>
     <p className={styles.text}>Contact details and links:</p>
-    <ul>
+    <ul className={styles.contactList}>
       {contactArray.map((contact, idx) => (
-        <li className={styles.text} key={idx}>
+        <li className={classNames(styles.text, styles.item)} key={idx}>
           {contact.type}
           <Link className={styles.link} href={contact.href} target={"_blank"}>
             {contact.text}

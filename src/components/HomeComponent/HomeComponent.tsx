@@ -7,7 +7,6 @@ import ProjectsComponent from "../ProjectsComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import HeaderComponent from "../HeaderComponent";
 import classNames from "classnames";
-import getConfig from "next/config";
 
 export type Props = {
   emptyProp?: boolean;
@@ -44,12 +43,6 @@ const HomeComponent: React.FC<Props> = ({}) => {
 
   useEffect(() => {
     const getMessage = async () => {
-      const { publicRuntimeConfig } = getConfig();
-
-      const modifiedDate = new Date(
-        publicRuntimeConfig.modifiedDate
-      ).toString();
-
       try {
         const res1 = await fetch(
           "https://api.github.com/repos/edmondwong6279/portfolio/git/refs/heads/main"
@@ -63,7 +56,11 @@ const HomeComponent: React.FC<Props> = ({}) => {
         const parsed2 = await blobbed2.text();
         const res2json = await JSON.parse(parsed2);
 
-        setLatestCommit(`Last updated: ${modifiedDate} -- ${res2json.message}`);
+        const lastTimeStamp = new Date(res2json.author.date);
+
+        setLatestCommit(
+          `Last updated: ${lastTimeStamp.toUTCString()} -- ${res2json.message}`
+        );
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(
@@ -122,7 +119,17 @@ const HomeComponent: React.FC<Props> = ({}) => {
             },
           }}
         />
-        {latestCommit}
+        <motion.div
+          className={styles.commitMessage}
+          animate={{
+            opacity: [0, 1],
+            transition: {
+              delay: totalDuration,
+            },
+          }}
+        >
+          {latestCommit}
+        </motion.div>
       </footer>
     </div>
   );

@@ -45,5 +45,9 @@
 		.hr {
 			@include line;
 		}
+
+		.commitMessage {
+			margin: 20px 0;
+		}
 	}
 }

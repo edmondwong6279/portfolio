@@ -1,7 +1,6 @@
 import styles from "./HeaderComponent.module.scss";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import classNames from "classnames";
 
 export type Props = {
   sectionArray: {
@@ -52,9 +51,7 @@ const HeaderComponent: React.FC<Props> = ({
     >
       {sectionArray.map((navItem, idx) => (
         <div
-          className={classNames(styles.navItem, {
-            [styles.highlight]: section === idx,
-          })}
+          className={styles.navItem}
           onClick={() => setSection(idx)}
           key={idx}
         >

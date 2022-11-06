@@ -9,7 +9,7 @@ export type projectType = {
 
 const ext = ".mp4";
 
-export const workArray: projectType[] = [
+export const projectsArray: projectType[] = [
   {
     title: "xenonarc",
     image: `/images/projects/xenon${ext}`,
@@ -34,7 +34,7 @@ export const workArray: projectType[] = [
       </>
     ),
     projectLink: "https://xenonarc.com/",
-    tags: ["framer-motion", "SVG", "team project"],
+    tags: ["framer-motion", "SVG", "team project", "work project"],
   },
   {
     title: "Shoe Generator",
@@ -81,6 +81,7 @@ export const workArray: projectType[] = [
       "nextjs",
       "framer",
       "solo project",
+      "work project",
     ],
   },
   {
@@ -104,7 +105,7 @@ export const workArray: projectType[] = [
             switches between graph types.
           </li>
           <li>
-            Create custom slider component that allows for a pleasent and
+            Create custom slider component that allows for a pleasant and
             intuitive UX.
           </li>
           <li>
@@ -115,7 +116,7 @@ export const workArray: projectType[] = [
         </ul>
       </>
     ),
-    tags: ["data visualisation", "SVG", "team project"],
+    tags: ["data visualisation", "SVG", "team project", "work project"],
   },
   {
     title: "Rhinostics ROI Calculator",
@@ -143,11 +144,8 @@ export const workArray: projectType[] = [
       </>
     ),
     projectLink: "https://rhinostics.com/roi/",
-    tags: ["data visualisation", "team project"],
+    tags: ["data visualisation", "team project", "work project"],
   },
-];
-
-export const personalArray: projectType[] = [
   {
     title: "Let The Words Out",
     image: `/images/projects/ltwo${ext}`,
@@ -181,7 +179,15 @@ export const personalArray: projectType[] = [
       </>
     ),
     projectLink: "https://letthewordsout.com/",
-    tags: ["canvas", "matter-js", "d3", "SQL", "PostgreSQL", "solo project"],
+    tags: [
+      "canvas",
+      "matter-js",
+      "d3",
+      "SQL",
+      "PostgreSQL",
+      "solo project",
+      "personal project",
+    ],
   },
   {
     title: "Bacon Snakes",
@@ -200,7 +206,7 @@ export const personalArray: projectType[] = [
         <p>This project helped me to:</p>
         <ul>
           <li>
-            Learn the basics of game development by implementating a game loop,
+            Learn the basics of game development by implementing a game loop,
             and separating this from the renderer.
           </li>
           <li>Use websockets for fast transmission of data.</li>
@@ -209,7 +215,14 @@ export const personalArray: projectType[] = [
     ),
     // projectLink: "google.com",
     // gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
-    tags: ["canvas", "game", "fun", "solo project", "web sockets"],
+    tags: [
+      "canvas",
+      "game",
+      "fun",
+      "solo project",
+      "web sockets",
+      "personal project",
+    ],
   },
   {
     title: "Covid Data Visualisation",
@@ -235,7 +248,7 @@ export const personalArray: projectType[] = [
         <ul>
           <li>Learn to scrape data from csv data using fetch.</li>
           <li>
-            Use d3 (specfically d3 scale) to calculate mouse positions to allow
+            Use d3 (specifically d3 scale) to calculate mouse positions to allow
             for the hover tooltip.
           </li>
           <li>
@@ -255,6 +268,7 @@ export const personalArray: projectType[] = [
       "framer-motion",
       "data visualisation",
       "solo project",
+      "personal project",
     ],
   },
   {
@@ -291,7 +305,14 @@ export const personalArray: projectType[] = [
     ),
     projectLink: "https://solar-system-simulator.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/solar-system-simulator",
-    tags: ["cannon-es", "three-js", "fun", "solo project", "3D"],
+    tags: [
+      "cannon-es",
+      "three-js",
+      "fun",
+      "solo project",
+      "3D",
+      "personal project",
+    ],
   },
   {
     title: "Drawing Tool",
@@ -309,7 +330,7 @@ export const personalArray: projectType[] = [
         <p>This project helped me to:</p>
         <ul>
           <li>
-            Understanding rendering on canvas and how we can separate components
+            Understand rendering on canvas and how we can separate components
             apart.
           </li>
         </ul>
@@ -317,7 +338,7 @@ export const personalArray: projectType[] = [
     ),
     projectLink: "https://drawing-tool-ew.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/drawing-tool",
-    tags: ["canvas", "fun", "solo project"],
+    tags: ["canvas", "fun", "solo project", "personal project"],
   },
   {
     title: "Expanding Shapes",
@@ -325,7 +346,7 @@ export const personalArray: projectType[] = [
     description: (
       <>
         <p>
-          Every click on the canvas triggers a random regualr polygon of a
+          Every click on the canvas triggers a random regular polygon of a
           random size, with a random easing from a predefined set of easing
           functions, of a random colour.
         </p>
@@ -346,7 +367,7 @@ export const personalArray: projectType[] = [
     ),
     projectLink: "https://expanding-shapes.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/expanding-shapes",
-    tags: ["canvas", "fun", "solo project"],
+    tags: ["canvas", "fun", "solo project", "personal project"],
   },
   {
     title: "Space Pool",
@@ -364,7 +385,7 @@ export const personalArray: projectType[] = [
         {/* Libraries used */}
         <p>
           Just like the solar system simulation, this uses threejs for the
-          rendering and cannon-es for the physcis simulation.
+          rendering and cannon-es for the physics simulation.
         </p>
         {/* Things learned */}
         <p>This project helped me to:</p>
@@ -381,6 +402,13 @@ export const personalArray: projectType[] = [
     ),
     projectLink: "https://space-pool.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/space-pool",
-    tags: ["cannon-es", "three-js", "fun", "solo project", "3D"],
+    tags: [
+      "cannon-es",
+      "three-js",
+      "fun",
+      "solo project",
+      "3D",
+      "personal project",
+    ],
   },
 ];

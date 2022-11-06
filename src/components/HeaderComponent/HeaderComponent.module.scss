@@ -26,7 +26,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 20px;
+	margin-top: 5px;
+
+	@include tablet {
+		margin-top: 20px;
+	}
 
 	.navItem {
 		@include link;
@@ -44,8 +48,12 @@
 		.underline {
 			position: absolute;
 			right: 0;
-			bottom: -20px;
+			bottom: -12px;
 			left: 0;
+
+			@include tablet {
+				bottom: -20px;
+			}
 
 			@include line(4px);
 		}
