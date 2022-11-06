@@ -9,21 +9,44 @@ export type projectType = {
 
 const ext = ".mp4";
 
+const tags = {
+  framer: "Framer Motion",
+  svg: "SVG",
+  team: "Team Project",
+  work: "Work Project",
+  python: "Python",
+  ML: "Machine Learning",
+  node: "Node.js",
+  next: "Next.js",
+  solo: "Solo Project",
+  datavis: "Data Visualisation",
+  canvas: "Canvas",
+  matter: "Matter.js",
+  d3: "D3.js",
+  sql: "SQL",
+  postgresql: "PostgreSQL",
+  personal: "Personal Project",
+  game: "Game",
+  fun: "Fun",
+  ws: "Web Sockets",
+  fetch: "Fetch API",
+  cannon: "cannon-es",
+  three: "three-js",
+  "3d": "3D",
+};
+
 export const projectsArray: projectType[] = [
   {
     title: "xenonarc",
     image: `/images/projects/xenon${ext}`,
     description: (
       <>
-        {/* Descibe project */}
         <p>
           Worked in a team to build the xenonarc website. My responsibilities
           were animating the background and logo on the front page. As the
           project moved on, I contributed further by bug fixing.
         </p>
-        {/* Libraries used */}
         <p>The background and logo were animated using framer on SVGs.</p>
-        {/* Things learned */}
         <p>This project helped me to:</p>
         <ul>
           <li>Gain experience in working in a team with a large client.</li>
@@ -34,21 +57,19 @@ export const projectsArray: projectType[] = [
       </>
     ),
     projectLink: "https://xenonarc.com/",
-    tags: ["framer-motion", "SVG", "team project", "work project"],
+    tags: [tags.framer, tags.svg, tags.team, tags.work],
   },
   {
     title: "Shoe Generator",
     image: `/images/projects/shoes${ext}`,
     description: (
       <>
-        {/* Descibe project */}
         <p>
           This passion project utilised my knowledge in machine learning to
           produce an image generator for shoes. The implementation gives the
           user the options to refine strange and wonderful designs, all in a
           simple and clear UI.
         </p>
-        {/* Libraries used */}
         <p>
           The model used was{" "}
           <a
@@ -63,7 +84,6 @@ export const projectsArray: projectType[] = [
           sharing with each unique shoe, keeping the image in the metadata using
           opengraph. The fun animations were implemented using framer.
         </p>
-        {/* Things learned */}
         <p>This project helped me to:</p>
         <ul>
           <li>
@@ -75,13 +95,13 @@ export const projectsArray: projectType[] = [
     ),
     projectLink: "https://shoegen.universlabs.co.uk/",
     tags: [
-      "python",
-      "machine learning",
-      "nodejs",
-      "nextjs",
-      "framer",
-      "solo project",
-      "work project",
+      tags.python,
+      tags.ML,
+      tags.node,
+      tags.next,
+      tags.framer,
+      tags.solo,
+      tags.work,
     ],
   },
   {
@@ -89,15 +109,16 @@ export const projectsArray: projectType[] = [
     image: `/images/projects/bald${ext}`,
     description: (
       <>
-        {/* Descibe project */}
         <p>
           This project fetches predefined data and displays it in either a box
-          plot, line graph or a bar chart. Lots of different data presented a
-          challenge to how we could cleanly code this.
+          plot, line graph or a bar chart. Furthermore, users can check their
+          own statistics against this predefined data. This comparison is
+          displayed in a custom box plot.
         </p>
-        {/* Libraries used */}
-        <p>The graphs were implemented using SVG.</p>
-        {/* Things learned */}
+        <p>
+          The graphs were implemented using SVG and animated using framer
+          motion.
+        </p>
         <p>This project helped me to:</p>
         <ul>
           <li>
@@ -109,31 +130,27 @@ export const projectsArray: projectType[] = [
             intuitive UX.
           </li>
           <li>
-            Worked closely with the 1 other developer in this team to produce a
-            clean and well performing implementation of this data visualisation
-            project.
+            Collaborated with one other developer to produce a clean
+            implementation of this data visualisation project.
           </li>
         </ul>
       </>
     ),
-    tags: ["data visualisation", "SVG", "team project", "work project"],
+    tags: [tags.datavis, tags.svg, tags.team, tags.work],
   },
   {
     title: "Rhinostics ROI Calculator",
     image: `/images/projects/rhino${ext}`,
     description: (
       <>
-        {/* Descibe project */}
         <p>
           In this project, the user inputs information in a form and receives a
           custom page based on their answers.
         </p>
-        {/* Libraries used */}
         <p>
           This was a fairly basic project that helped me to work to a simple
           design but achieve the closest result to the design.
         </p>
-        {/* Things learned */}
         <p>This project helped me to:</p>
         <ul>
           <li>
@@ -144,7 +161,7 @@ export const projectsArray: projectType[] = [
       </>
     ),
     projectLink: "https://rhinostics.com/roi/",
-    tags: ["data visualisation", "team project", "work project"],
+    tags: [tags.datavis, tags.team, tags.work],
   },
   {
     title: "Let The Words Out",
@@ -153,8 +170,9 @@ export const projectsArray: projectType[] = [
       <>
         <p>
           Worked with a local band to create a promotional webpage. The user
-          types any phrase and is returned with the amount of times other users
-          have used each word in the database.
+          types and submits a phrase, then an animation of any matching words
+          with their corresponding number of submissions is displayed in a
+          floating circle on a canvas element.
         </p>
         <p>
           Initial data was scraped via a python reddit scraper and was developed
@@ -180,13 +198,13 @@ export const projectsArray: projectType[] = [
     ),
     projectLink: "https://letthewordsout.com/",
     tags: [
-      "canvas",
-      "matter-js",
-      "d3",
-      "SQL",
-      "PostgreSQL",
-      "solo project",
-      "personal project",
+      tags.canvas,
+      tags.matter,
+      tags.d3,
+      tags.sql,
+      tags.postgresql,
+      tags.solo,
+      tags.personal,
     ],
   },
   {
@@ -200,7 +218,7 @@ export const projectsArray: projectType[] = [
         </p>
         <p>
           Uses keyboard input for movement, and tracks high scores. Also allows
-          for muiltiplayer by using websockets (coming soon). This project will
+          for multiplayer by using websockets (coming soon). This project will
           be public soon.
         </p>
         <p>This project helped me to:</p>
@@ -215,14 +233,7 @@ export const projectsArray: projectType[] = [
     ),
     // projectLink: "google.com",
     // gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
-    tags: [
-      "canvas",
-      "game",
-      "fun",
-      "solo project",
-      "web sockets",
-      "personal project",
-    ],
+    tags: [tags.canvas, tags.game, tags.fun, tags.solo, tags.ws, tags.personal],
   },
   {
     title: "Covid Data Visualisation",
@@ -262,13 +273,13 @@ export const projectsArray: projectType[] = [
     projectLink: "https://covid-data-vis.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/covid-data-vis",
     tags: [
-      "d3",
-      "fetch API",
-      "SVG",
-      "framer-motion",
-      "data visualisation",
-      "solo project",
-      "personal project",
+      tags.d3,
+      tags.fetch,
+      tags.svg,
+      tags.framer,
+      tags.datavis,
+      tags.solo,
+      tags.personal,
     ],
   },
   {
@@ -276,20 +287,18 @@ export const projectsArray: projectType[] = [
     image: `/images/projects/space${ext}`,
     description: (
       <>
-        {/* Descibe project */}
         <p>
           Used threejs to render a 3D model of the solar system. It is not
           visually to scale, but implements a good enough approximation of
           gravity between bodies. The implementation allows the user to move the
           camera around freely to observe.
         </p>
-        {/* Libraries used */}
         <p>
-          Threejs to render, and cannon-es to simulate the physics system.
-          Cannon-es had no in built force of gravity so I created a custom force
-          that calculates the force exerted between two bodies.
+          Threejs was used to render, and cannon-es to simulate the physics
+          system. Cannon-es has no preexisting function for the force of gravity
+          so I created a custom function that calculates the gravitational force
+          exerted between two bodies.
         </p>
-        {/* Things learned */}
         <p>This project helped me to:</p>
         <ul>
           <li>Render a 3D system with lighting effects.</li>
@@ -306,12 +315,12 @@ export const projectsArray: projectType[] = [
     projectLink: "https://solar-system-simulator.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/solar-system-simulator",
     tags: [
-      "cannon-es",
-      "three-js",
-      "fun",
-      "solo project",
-      "3D",
-      "personal project",
+      tags.cannon,
+      tags.three,
+      tags.fun,
+      tags.solo,
+      tags["3d"],
+      tags.personal,
     ],
   },
   {
@@ -346,9 +355,10 @@ export const projectsArray: projectType[] = [
     description: (
       <>
         <p>
-          Every click on the canvas triggers a random regular polygon of a
-          random size, with a random easing from a predefined set of easing
-          functions, of a random colour.
+          The user clicks on the screen which triggers a shape to be rendered at
+          that position, expanding from a point. The shape randomises the number
+          of sides on the regular polygon, the type of easing function, the
+          duration (between set bounds), colour and opacity.
         </p>
         <p>
           Implemented using canvas and ensures that the shapes will always be
@@ -367,14 +377,13 @@ export const projectsArray: projectType[] = [
     ),
     projectLink: "https://expanding-shapes.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/expanding-shapes",
-    tags: ["canvas", "fun", "solo project", "personal project"],
+    tags: [tags.canvas, tags.fun, tags.solo, tags.personal],
   },
   {
     title: "Space Pool",
     image: `/images/projects/pool${ext}`,
     description: (
       <>
-        {/* Descibe project */}
         <p>
           Continuing my experimentation of 3D systems and spherical bodies, this
           project is a very simple implementation of balls on a surface. There
@@ -382,12 +391,10 @@ export const projectsArray: projectType[] = [
           clicking them. Collisions are simulated accurately using cannon-es
           again.
         </p>
-        {/* Libraries used */}
         <p>
           Just like the solar system simulation, this uses threejs for the
           rendering and cannon-es for the physics simulation.
         </p>
-        {/* Things learned */}
         <p>This project helped me to:</p>
         <ul>
           <li>
@@ -403,12 +410,12 @@ export const projectsArray: projectType[] = [
     projectLink: "https://space-pool.vercel.app/",
     gitprojectLink: "https://github.com/edmondwong6279/space-pool",
     tags: [
-      "cannon-es",
-      "three-js",
-      "fun",
-      "solo project",
-      "3D",
-      "personal project",
+      tags.cannon,
+      tags.three,
+      tags.fun,
+      tags.solo,
+      tags["3d"],
+      tags.personal,
     ],
   },
 ];

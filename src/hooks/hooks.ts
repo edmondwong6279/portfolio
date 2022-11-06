@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useMemo, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 type Dims = { width: number; height: number };
 
@@ -26,21 +26,22 @@ export const useIsInViewport = (
   ref: React.MutableRefObject<HTMLVideoElement | null>
 ) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(
-        ([entry]) => setIsIntersecting(entry.isIntersecting),
-        { rootMargin: "-50% 0px -40% 0px" }
-      ),
-    []
-  );
+  const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    observer.observe(ref.current as Element);
+    setObserver(
+      new IntersectionObserver(
+        ([entry]) => setIsIntersecting(entry.isIntersecting),
+        { rootMargin: "-50% 0% -40% 0%" }
+      )
+    );
+  }, []);
+
+  useEffect(() => {
+    observer?.observe(ref.current as Element);
 
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
     };
   }, [ref, observer]);
 

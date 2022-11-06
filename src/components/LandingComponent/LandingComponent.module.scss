@@ -37,16 +37,16 @@
 		@include tablet {
 			padding-inline-start: 40px;
 		}
-	}
 
-	.item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		.item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
-		@include tablet {
-			display: list-item;
+			@include tablet {
+				display: list-item;
+			}
 		}
 	}
 }

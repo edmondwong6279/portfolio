@@ -29,9 +29,9 @@ const contactArray = [
     text: "My CV",
   },
   {
-    type: "Portfolio repo: ",
+    type: "Portfolio github repository: ",
     href: "https://github.com/edmondwong6279/portfolio",
-    text: "portfolio repo",
+    text: "Portfolio Repo",
   },
 ];
 
@@ -46,7 +46,7 @@ const LandingComponent: React.FC<Props> = ({}) => (
       the projects that I've worked on.
     </p>
     <p className={styles.text}>
-      This application was created using next.js and is fully responsive. It is
+      This application was created using Next.js and is fully responsive. It is
       regularly updated, and the latest commit can be found at the footer.
     </p>
     <p className={styles.text}>Each section is described as follows:</p>

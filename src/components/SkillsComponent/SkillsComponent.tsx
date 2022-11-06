@@ -58,7 +58,7 @@ const SkillsComponent: React.FC<Props> = ({}) => {
     <div className={styles.container} ref={areaRef}>
       <h2 className={styles.bigHeader}>Skills</h2>
       <p className={styles.text}>
-        Here is a breakdown of my proficiancies in different languages,
+        Here is a breakdown of my proficiencies in different languages,
         frameworks and libraries, from beginner to intermediate. (Work in
         progress).
       </p>

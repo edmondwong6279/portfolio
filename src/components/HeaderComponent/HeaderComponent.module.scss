@@ -1,61 +1,78 @@
 @import "src/styles/main";
 
-.headerContainer {
-	@include container;
-
-	display: flex;
-	width: 100%;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	h1 {
-		margin: 0;
-		cursor: pointer;
-		font-size: 50px;
-	}
-
-	.hr {
-		@include line;
-	}
-}
-
-.navBar {
-	@include container;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: 5px;
+.headerContainerOuter {
+	position: sticky;
+	z-index: 5;
+	top: 0;
+	padding: 10px 0;
+	box-shadow: 0 0 0;
+	transition: all 0.2s ease-in-out;
 
 	@include tablet {
-		margin-top: 20px;
+		padding: 30px 0;
 	}
 
-	.navItem {
-		@include link;
+	&.scrolled {
+		box-shadow: 0 0 5px;
+	}
 
-		position: relative;
-		font-size: 14px;
-		text-transform: uppercase;
-		transition: all 0.2s ease-in-out;
-		user-select: none;
+	.headerContainer {
+		@include container;
 
-		@include tablet {
-			font-size: 20px;
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.mainTitle {
+			margin: 0;
+			cursor: pointer;
+			font-size: 50px;
 		}
 
-		.underline {
-			position: absolute;
-			right: 0;
-			bottom: -12px;
-			left: 0;
+		.hr {
+			@include line;
+		}
+	}
+
+	.navBar {
+		@include container;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 5px;
+
+		@include tablet {
+			margin-top: 20px;
+		}
+
+		.navItem {
+			@include link;
+
+			position: relative;
+			font-size: 14px;
+			text-transform: uppercase;
+			transition: all 0.2s ease-in-out;
+			user-select: none;
 
 			@include tablet {
-				bottom: -20px;
+				font-size: 20px;
 			}
 
-			@include line(4px);
+			.underline {
+				@include line(4px);
+
+				position: absolute;
+				right: 0;
+				bottom: -12px;
+				left: 0;
+
+				@include tablet {
+					bottom: -20px;
+				}
+			}
 		}
 	}
 }

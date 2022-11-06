@@ -11,6 +11,13 @@ export default class extends Document {
             content="Ed Wong's Portfolio. Get to know what I do, what I've done and achievements that I am proud of!"
           />
           <link rel="icon" href="/fav.ico" />
+          <link rel="shortcut icon" href="/fav.ico" />
+          <link
+            rel="apple-touch-icon"
+            sizes="184x184"
+            type="image/png"
+            href="/fav.png"
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

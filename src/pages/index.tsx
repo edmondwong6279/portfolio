@@ -1,5 +1,11 @@
-import HomeComponent from "../components/HomeComponent";
+import React from "react";
+import AnimateWrapper from "../components/AnimateWrapper";
+import LandingComponent from "../components/LandingComponent";
 
-export default function Home() {
-  return <HomeComponent />;
-}
+const index: React.FC = ({}) => (
+  <AnimateWrapper>
+    <LandingComponent />
+  </AnimateWrapper>
+);
+
+export default index;

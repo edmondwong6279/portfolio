@@ -1,0 +1,15 @@
+@import "src/styles/main";
+
+.container {
+	position: relative;
+	width: 100%;
+
+	.sections {
+		@include container;
+
+		.sectionContainer {
+			overflow: hidden;
+			margin-top: 20px;
+		}
+	}
+}

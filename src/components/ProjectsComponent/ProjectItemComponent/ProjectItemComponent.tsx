@@ -47,7 +47,7 @@ const ProjectItemComponent: React.FC<Props> = ({
       <hr className={styles.line} />
       <div className={styles.gridTitle}>{projectItem.title}</div>
       <div className={styles.gridImage}>
-        <video className={styles.vid} playsInline controls loop ref={vidRef}>
+        <video className={styles.vid} playsInline loop ref={vidRef}>
           <source src={projectItem.image} type={"video/mp4"} />
         </video>
       </div>
