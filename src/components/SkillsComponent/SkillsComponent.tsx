@@ -1,13 +1,10 @@
 import styles from "./SkillsComponent.module.scss";
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { skillType } from "types";
 
-export type Props = {
-  emptyProp?: boolean;
-};
-
-import { webSkills, pythonSkills, otherSkills, skillType } from "./data";
-import { useDims } from "../../hooks/hooks";
+import { webSkills, pythonSkills, otherSkills } from "./data";
+import { useDims } from "hooks";
 
 export const textOffset = 4;
 
@@ -20,7 +17,7 @@ const getData = (skill: skillType, idx: number, xUnit: number) => ({
   value: skill.score,
 });
 
-const SkillsComponent: React.FC<Props> = ({}) => {
+const SkillsComponent: React.FC = () => {
   const [areaRef, dims] = useDims<HTMLDivElement>();
   const [xUnit, setXUnit] = useState(100);
 

@@ -2,11 +2,7 @@ import styles from "./ProjectsComponent.module.scss";
 import React from "react";
 import ProjectArrayComponent from "./ProjectArrayComponent";
 
-export type Props = {
-  emptyProp?: boolean;
-};
-
-const ProjectsComponent: React.FC<Props> = ({}) => (
+const ProjectsComponent: React.FC = () => (
   <div className={styles.container}>
     <div className={styles.text}>
       Here are a bunch of my projects I have worked on. I have provided links to

@@ -1,16 +1,16 @@
-import "src/styles/globals.scss";
+import "styles/globals.scss";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import FooterComponent from "../components/FooterComponent";
-import HeaderComponent from "../components/HeaderComponent";
-import AboutComponent from "../components/AboutComponent";
-import LandingComponent from "../components/LandingComponent";
-import ProjectsComponent from "../components/ProjectsComponent";
-import SkillsComponent from "../components/SkillsComponent";
-import styles from "../styles/app.module.scss";
+import FooterComponent from "components/FooterComponent";
+import HeaderComponent from "components/HeaderComponent";
+import AboutComponent from "components/AboutComponent";
+import LandingComponent from "components/LandingComponent";
+import ProjectsComponent from "components/ProjectsComponent";
+import SkillsComponent from "components/SkillsComponent";
+import styles from "styles/app.module.scss";
 
 const sectionArray = [
   {

@@ -1,8 +1,7 @@
 import styles from "./ProjectItemComponent.module.scss";
 import React, { useEffect, useRef } from "react";
-import { useIsInViewport } from "../../../hooks/hooks";
-
-import { projectType } from "../ProjectArrayComponent/projectArrays";
+import { useIsInViewport } from "hooks";
+import { projectType } from "types";
 import classNames from "classnames";
 
 export type Props = {

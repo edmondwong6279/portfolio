@@ -1,6 +1,6 @@
 import React from "react";
-import AnimateWrapper from "../components/AnimateWrapper";
-import LandingComponent from "../components/LandingComponent";
+import AnimateWrapper from "components/AnimateWrapper";
+import LandingComponent from "components/LandingComponent";
 
 const index: React.FC = ({}) => (
   <AnimateWrapper>

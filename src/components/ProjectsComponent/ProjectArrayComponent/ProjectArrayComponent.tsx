@@ -1,14 +1,10 @@
 import styles from "./ProjectArrayComponent.module.scss";
 import React, { useState } from "react";
-import ProjectItemComponent from "../ProjectItemComponent";
-
-export type Props = {
-  emptyProp?: boolean;
-};
+import ProjectItemComponent from "components/ProjectsComponent/ProjectItemComponent";
 
 import { projectsArray } from "./projectArrays";
 
-const ProjectArrayComponent: React.FC<Props> = ({}) => {
+const ProjectArrayComponent: React.FC = () => {
   const [itemPlaying, setItemPlaying] = useState(0);
 
   return (

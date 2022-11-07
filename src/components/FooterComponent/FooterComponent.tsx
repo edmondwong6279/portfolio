@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 export type Props = {
   totalDuration: number;
-  emptyProp?: boolean;
 };
 
 const FooterComponent: React.FC<Props> = ({ totalDuration }) => {

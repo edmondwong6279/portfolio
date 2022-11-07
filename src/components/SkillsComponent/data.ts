@@ -1,32 +1,105 @@
-export type skillType = {
-  name: string;
-  score: number;
-};
+import { skillType } from "types";
 
 export const webSkills: skillType[] = [
-  { name: "JS/TS", score: 4 },
-  { name: "CSS/SCSS", score: 3 },
-  { name: "React", score: 4 },
-  { name: "Node.js", score: 3 },
-  { name: "Next.js", score: 3 },
-  { name: "D3.js", score: 2 },
-  { name: "Matter.js", score: 1 },
-  { name: "Three.js", score: 2 },
-  { name: "Ammo.js", score: 1 },
-  { name: "Canvas", score: 4 },
-  { name: "SVG", score: 4 },
+  {
+    name: "JS/TS",
+    score: 4,
+    info: "Started with JavaScript then moved into TypeScript. All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "CSS/Sass",
+    score: 3,
+    info: "All styling is applied using Sass.",
+  },
+  {
+    name: "React",
+    score: 4,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Node.js",
+    score: 3,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Next.js",
+    score: 3,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "D3.js",
+    score: 2,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Matter.js",
+    score: 1,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Three.js",
+    score: 2,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Ammo.js",
+    score: 1,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Canvas",
+    score: 4,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "SVG",
+    score: 4,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
 ];
 
 export const pythonSkills: skillType[] = [
-  { name: "Python", score: 4 },
-  { name: "PyTorch", score: 3 },
-  { name: "Numpy", score: 3 },
-  { name: "SciPy", score: 1 },
+  {
+    name: "Python",
+    score: 4,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "PyTorch",
+    score: 3,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Numpy",
+    score: 3,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "SciPy",
+    score: 1,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
 ];
 
 export const otherSkills: skillType[] = [
-  { name: "SQL", score: 2 },
-  { name: "Git", score: 3 },
-  { name: "Docker", score: 2 },
-  { name: "Java", score: 3 },
+  {
+    name: "SQL",
+    score: 2,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Git",
+    score: 3,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Docker",
+    score: 2,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
+  {
+    name: "Java",
+    score: 3,
+    info: "All web projects are developed using typescript, hence I have an intermediate understanding of this language.",
+  },
 ];

@@ -4,13 +4,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import classNames from "classnames";
 import { useRouter } from "next/router";
+import { sectionArrayType } from "types";
 
 export type Props = {
-  sectionArray: {
-    name: string;
-    linkName: string;
-    component: JSX.Element;
-  }[];
+  sectionArray: sectionArrayType;
   totalDuration: number;
   scrolled: boolean;
 };

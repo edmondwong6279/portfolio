@@ -1,6 +1,5 @@
 import { MutableRefObject, useEffect, useRef, useState } from "react";
-
-type Dims = { width: number; height: number };
+import { Dims } from "types";
 
 export const useDims = <T>(): [MutableRefObject<T | null>, Dims] => {
   const ref = useRef<T | null>(null);

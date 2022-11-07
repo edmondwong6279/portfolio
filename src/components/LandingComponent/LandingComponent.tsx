@@ -2,40 +2,9 @@ import styles from "./LandingComponent.module.scss";
 import React from "react";
 import Link from "next/link";
 import classNames from "classnames";
+import { contactArray } from "./data";
 
-export type Props = {
-  emptyProp?: boolean;
-};
-
-const contactArray = [
-  {
-    type: "Email: ",
-    href: "mailto:edmondwong6279@gmail.com",
-    text: "edmondwong6279@gmail.com",
-  },
-  {
-    type: "LinkedIn: ",
-    href: "https://www.linkedin.com/in/edmondwong6279/",
-    text: "edmondwong6279",
-  },
-  {
-    type: "Github: ",
-    href: "https://github.com/edmondwong6279",
-    text: "github.com/edmondwong6279",
-  },
-  {
-    type: "CV: ",
-    href: "/Ed_Wong_CV.pdf",
-    text: "My CV",
-  },
-  {
-    type: "Portfolio github repository: ",
-    href: "https://github.com/edmondwong6279/portfolio",
-    text: "Portfolio Repo",
-  },
-];
-
-const LandingComponent: React.FC<Props> = ({}) => (
+const LandingComponent: React.FC = () => (
   <div className={styles.container}>
     <h2 className={styles.bigHeader}>
       My name is Ed and welcome to my portfolio.

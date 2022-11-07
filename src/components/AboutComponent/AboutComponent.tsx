@@ -1,6 +1,6 @@
 import styles from "./AboutComponent.module.scss";
 import React from "react";
-import ImageComponent from "../ImageComponent";
+import ImageComponent from "components/ImageComponent";
 import classNames from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
@@ -10,11 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export type Props = {
-  emptyProp?: boolean;
-};
-
-const AboutComponent: React.FC<Props> = ({}) => (
+const AboutComponent: React.FC = () => (
   <section className={styles.container}>
     <div className={styles.aboutSection}>
       <h3 className={styles.bigHeader}>Education Achievements</h3>
@@ -39,8 +35,6 @@ const AboutComponent: React.FC<Props> = ({}) => (
           <ImageComponent
             alt={"My friends and I at our graduation."}
             src={"/images/maths_grad.jpg"}
-            height={400}
-            width={400}
           />
         </div>
       </div>
@@ -70,8 +64,6 @@ const AboutComponent: React.FC<Props> = ({}) => (
           <ImageComponent
             src={"/images/me.jpg"}
             alt={"Image of me at my M.Sc Computer Science graduation."}
-            width={400}
-            height={400}
           />
         </div>
       </div>
@@ -96,8 +88,6 @@ const AboutComponent: React.FC<Props> = ({}) => (
           <ImageComponent
             alt={"My charity skydive."}
             src={"/images/skydive.jpg"}
-            width={400}
-            height={400}
           />
         </div>
       </div>
@@ -135,24 +125,18 @@ const AboutComponent: React.FC<Props> = ({}) => (
               <ImageComponent
                 alt={"Kilimanjaro group fundraising in a bucket shake."}
                 src={"/images/kili_fundraising.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
             <SwiperSlide>
               <ImageComponent
                 alt={"Kilimanjaro group at base camp."}
                 src={"/images/kili_base.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
             <SwiperSlide>
               <ImageComponent
                 alt={"Kilimanjaro group at the summit."}
                 src={"/images/kili_summit.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
           </Swiper>
@@ -194,16 +178,12 @@ const AboutComponent: React.FC<Props> = ({}) => (
               <ImageComponent
                 alt={"Myself and my friend taking part in tough guy 2016."}
                 src={"/images/tough_guy16.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
             <SwiperSlide>
               <ImageComponent
                 alt={"Myself and my friend taking part in tough guy 2018."}
                 src={"/images/tough_guy18.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
           </Swiper>
@@ -232,16 +212,12 @@ const AboutComponent: React.FC<Props> = ({}) => (
               <ImageComponent
                 alt={"A group of friends running coventry half marathon 2016."}
                 src={"/images/covhalf_16.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
             <SwiperSlide>
               <ImageComponent
                 alt={"A group of friends running coventry half marathon 2016."}
                 src={"/images/covhalf_17.jpg"}
-                height={400}
-                width={400}
               />
             </SwiperSlide>
           </Swiper>
@@ -267,8 +243,6 @@ const AboutComponent: React.FC<Props> = ({}) => (
           <ImageComponent
             alt={"Some of the Carnival RAG committee."}
             src={"/images/rag.jpg"}
-            width={400}
-            height={400}
           />
         </div>
       </div>
@@ -308,8 +282,6 @@ const AboutComponent: React.FC<Props> = ({}) => (
               "Mathsoc committee accepting our award at the guild awards for most improved society."
             }
             src={"/images/mathsoc.jpg"}
-            width={400}
-            height={400}
           />
         </div>
       </div>

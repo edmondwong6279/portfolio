@@ -1,13 +1,4 @@
-export type projectType = {
-  title: string;
-  image: string;
-  description: JSX.Element;
-  projectLink?: string;
-  gitprojectLink?: string;
-  tags: string[];
-};
-
-const ext = ".mp4";
+import { projectType } from "types";
 
 const tags = {
   framer: "Framer Motion",
@@ -38,7 +29,7 @@ const tags = {
 export const projectsArray: projectType[] = [
   {
     title: "xenonarc",
-    image: `/images/projects/xenon${ext}`,
+    image: `/images/projects/xenon.mp4`,
     description: (
       <>
         <p>
@@ -61,7 +52,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Shoe Generator",
-    image: `/images/projects/shoes${ext}`,
+    image: `/images/projects/shoes.mp4`,
     description: (
       <>
         <p>
@@ -106,7 +97,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Balderton Benchmark Tool",
-    image: `/images/projects/bald${ext}`,
+    image: `/images/projects/bald.mp4`,
     description: (
       <>
         <p>
@@ -140,7 +131,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Rhinostics ROI Calculator",
-    image: `/images/projects/rhino${ext}`,
+    image: `/images/projects/rhino.mp4`,
     description: (
       <>
         <p>
@@ -165,7 +156,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Let The Words Out",
-    image: `/images/projects/ltwo${ext}`,
+    image: `/images/projects/ltwo.mp4`,
     description: (
       <>
         <p>
@@ -209,7 +200,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Bacon Snakes",
-    image: `/images/projects/snake${ext}`,
+    image: `/images/projects/snake.mp4`,
     description: (
       <>
         <p>
@@ -237,7 +228,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Covid Data Visualisation",
-    image: `/images/projects/covid${ext}`,
+    image: `/images/projects/covid.mp4`,
     description: (
       <>
         <p>
@@ -284,7 +275,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Simulating the Solar System",
-    image: `/images/projects/space${ext}`,
+    image: `/images/projects/space.mp4`,
     description: (
       <>
         <p>
@@ -325,7 +316,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Drawing Tool",
-    image: `/images/projects/draw${ext}`,
+    image: `/images/projects/draw.mp4`,
     description: (
       <>
         <p>
@@ -351,7 +342,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Expanding Shapes",
-    image: `/images/projects/shapes${ext}`,
+    image: `/images/projects/shapes.mp4`,
     description: (
       <>
         <p>
@@ -381,7 +372,7 @@ export const projectsArray: projectType[] = [
   },
   {
     title: "Space Pool",
-    image: `/images/projects/pool${ext}`,
+    image: `/images/projects/pool.mp4`,
     description: (
       <>
         <p>
