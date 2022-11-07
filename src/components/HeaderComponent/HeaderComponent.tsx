@@ -60,8 +60,8 @@ const HeaderComponent: React.FC<Props> = ({
         transition={{ delay: totalDuration * 0.6 }}
       >
         {sectionArray.map((navItem, idx) => (
-          <Link href={navItem.linkName}>
-            <div className={styles.navItem} key={idx}>
+          <Link href={navItem.linkName} key={idx}>
+            <div className={styles.navItem}>
               {navItem.name}
               <AnimatePresence>
                 {router.pathname === navItem.linkName && (
