@@ -4,6 +4,16 @@ export type skillType = {
   info: string;
 };
 
+export type skillBarType = {
+  height: number;
+  width: number;
+  x: number;
+  y: number;
+  name: string;
+  value: number;
+  description: string;
+};
+
 export type sectionArrayType = {
   name: string;
   linkName: string;

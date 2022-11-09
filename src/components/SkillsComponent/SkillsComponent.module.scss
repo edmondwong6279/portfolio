@@ -25,6 +25,7 @@
 		.svg {
 			width: 100%;
 			margin: 10px;
+			color: $primary;
 
 			@include tablet {
 				max-width: 1000px;
@@ -42,10 +43,6 @@
 				}
 			}
 
-			.bar {
-				fill: $primary;
-			}
-
 			.divider {
 				stroke: $primary;
 				stroke-width: 2px;
@@ -56,6 +53,18 @@
 				stroke: $primary;
 				stroke-dasharray: 4;
 				stroke-width: 1px;
+			}
+
+			.scaleLabel {
+				font-size: 15px;
+
+				@include tablet {
+					font-size: 27px;
+				}
+
+				@include desktop {
+					font-size: 35px;
+				}
 			}
 		}
 	}

@@ -1,20 +1,24 @@
 import styles from "./SkillsComponent.module.scss";
 import React, { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
-import { skillType } from "types";
-
+import { skillType, skillBarType } from "types";
 import { webSkills, pythonSkills, otherSkills } from "./data";
 import { useDims } from "hooks";
+import HoverComponent from "./HoverComponent";
 
-export const textOffset = 4;
+export const textOffset = 3;
 
-const getData = (skill: skillType, idx: number, xUnit: number) => ({
+const getData = (
+  skill: skillType,
+  idx: number,
+  xUnit: number
+): skillBarType => ({
   height: 60,
   width: skill.score * xUnit,
   x: textOffset * xUnit,
-  y: idx * 65,
+  y: idx * 65 + 65,
   name: skill.name,
   value: skill.score,
+  description: skill.info,
 });
 
 const SkillsComponent: React.FC = () => {
@@ -59,13 +63,12 @@ const SkillsComponent: React.FC = () => {
         frameworks and libraries, from beginner to intermediate. (Work in
         progress).
       </p>
-      {/* <p>TODO Flesh this out.</p> */}
       {allSVG.map((resultSVG, idx) => (
         <div className={styles.graphContainer} key={idx}>
           <h3 className={styles.header}>{resultSVG.skillType}</h3>
           <svg className={styles.svg} height={resultSVG.data.length * 65 - 5}>
             {resultSVG.data.map((skill, idx) => (
-              <motion.g key={idx}>
+              <g key={idx}>
                 <text
                   y={skill.y + 30}
                   className={styles.text}
@@ -73,35 +76,30 @@ const SkillsComponent: React.FC = () => {
                 >
                   {skill.name}
                 </text>
-                <motion.rect
-                  key={`${idx} ${dims}`}
-                  className={styles.bar}
-                  x={skill.x}
-                  y={skill.y}
-                  width={skill.width}
-                  height={skill.height}
-                  initial={"hidden"}
-                  animate={"visible"}
-                  variants={{
-                    hidden: {
-                      width: 0,
-                    },
-                    visible: {
-                      width: skill.width,
-                      transition: {
-                        ease: "easeInOut",
-                        duration: 0.5,
-                        delay: 0.5 + 0.1 * idx,
-                      },
-                    },
-                  }}
-                />
-              </motion.g>
+                <HoverComponent idx={idx} skill={skill} />
+              </g>
             ))}
+            <text
+              y={30}
+              x={textOffset * xUnit - 5}
+              className={styles.scaleLabel}
+              dominantBaseline="middle"
+            >
+              Beginner
+            </text>
+            <text
+              y={30}
+              x={textOffset * xUnit + 5 * xUnit}
+              className={styles.scaleLabel}
+              dominantBaseline="middle"
+              text-anchor="end"
+            >
+              Intermediate
+            </text>
             <line
               x1={textOffset * xUnit - 5}
               x2={textOffset * xUnit - 5}
-              y1={0}
+              y1={65}
               y2={65 * 11 - 5}
               className={styles.divider}
             />
@@ -110,7 +108,7 @@ const SkillsComponent: React.FC = () => {
                 key={idx}
                 x1={textOffset * xUnit + idx * xUnit}
                 x2={textOffset * xUnit + idx * xUnit}
-                y1={0}
+                y1={65}
                 y2={65 * 11 - 5}
                 className={styles.graphLine}
               />
@@ -121,4 +119,5 @@ const SkillsComponent: React.FC = () => {
     </div>
   );
 };
+
 export default SkillsComponent;
