@@ -7,7 +7,11 @@ import Sun from "assets/sun.svg";
 import Moon from "assets/moon.svg";
 import Image from "next/image";
 
-const DarkModeComponent: React.FC = () => {
+type Props = {
+  totalDuration: number;
+};
+
+const DarkModeComponent: React.FC<Props> = ({ totalDuration }) => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
@@ -16,6 +20,14 @@ const DarkModeComponent: React.FC = () => {
         [styles.light]: theme === "light",
         [styles.dark]: theme === "dark",
       })}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: [0, 1],
+        transition: {
+          duration: totalDuration * 0.6,
+          delay: totalDuration * 0.8,
+        },
+      }}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Image

@@ -84,7 +84,7 @@ export const projectsArray: projectType[] = [
         </ul>
       </>
     ),
-    projectLink: "https://shoegen.universlabs.co.uk/",
+    // projectLink: "https://shoegen.universlabs.co.uk/",
     tags: [
       tags.python,
       tags.ML,

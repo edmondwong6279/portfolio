@@ -40,7 +40,7 @@ const HeaderComponent: React.FC<Props> = ({
         <Link href={"/"}>
           <h1 className={styles.mainTitle}>Ed Wong</h1>
         </Link>
-        <DarkModeComponent />
+        <DarkModeComponent totalDuration={totalDuration} />
         <motion.hr
           className={classNames(styles.hr, styles[theme])}
           animate={{
