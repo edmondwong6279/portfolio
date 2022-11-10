@@ -1,0 +1,36 @@
+@import "styles/main";
+
+.switch {
+	position: absolute;
+	right: 30px;
+	display: flex;
+	overflow: hidden;
+	width: 20px;
+	height: 20px;
+	align-items: center;
+	border-radius: 50px;
+	cursor: pointer;
+
+	@include tablet {
+		width: 30px;
+		height: 30px;
+	}
+
+	&.light {
+		justify-content: flex-start;
+	}
+
+	&.dark {
+		justify-content: flex-end;
+	}
+
+	.themeIcon {
+		width: 20px;
+		height: 20px;
+
+		@include tablet {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}

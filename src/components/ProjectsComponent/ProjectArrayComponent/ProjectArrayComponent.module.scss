@@ -8,6 +8,6 @@
 	}
 
 	.divider {
-		@include line;
+		@include line(5px);
 	}
 }

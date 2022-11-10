@@ -1,6 +1,8 @@
 import styles from "./FooterComponent.module.scss";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import classNames from "classnames";
+import { ThemeContext } from "context/context";
 
 export type Props = {
   totalDuration: number;
@@ -8,6 +10,7 @@ export type Props = {
 
 const FooterComponent: React.FC<Props> = ({ totalDuration }) => {
   const [latestCommit, setLatestCommit] = useState("");
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const getMessage = async () => {
@@ -42,7 +45,7 @@ const FooterComponent: React.FC<Props> = ({ totalDuration }) => {
   return (
     <footer className={styles.container}>
       <motion.hr
-        className={styles.hr}
+        className={classNames(styles.hr, styles[theme])}
         animate={{
           opacity: [0, 1],
           width: ["0%", "100%"],

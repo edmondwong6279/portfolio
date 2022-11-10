@@ -10,7 +10,13 @@
 	@include container;
 
 	.hr {
-		@include line;
+		&.light {
+			@include line(5px, light);
+		}
+
+		&.dark {
+			@include line(5px, dark);
+		}
 	}
 
 	.commitMessage {

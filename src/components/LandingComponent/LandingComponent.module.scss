@@ -22,7 +22,13 @@
 	}
 
 	.link {
-		@include link;
+		&.light {
+			@include link(light);
+		}
+
+		&.dark {
+			@include link(dark);
+		}
 	}
 
 	.cvContainer {

@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 $tablet: 768px;
 $desktop: 1280px;
 $laptop: 1024px;
@@ -30,17 +32,48 @@ $laptop: 1024px;
 	}
 }
 
-@mixin link {
+@mixin getTheme($theme: light) {
+	@if $theme == light {
+		background: $bg_light;
+		background-color: $bg_light;
+		color: $primary_light;
+		fill: $primary_light;
+		stroke: $primary_light;
+	}
+
+	@else {
+		background: $bg_dark;
+		background-color: $bg_dark;
+		color: $primary_dark;
+		fill: $primary_dark;
+		stroke: $primary_dark;
+	}
+}
+
+@mixin link ($theme) {
 	padding: 5px 10px;
 	border-radius: 5px;
-	background-color: $secondary;
 	cursor: pointer;
 	font-size: 14px;
 	font-weight: 700;
 	transition: all 0.2s ease-in-out;
 
-	&:hover {
-		background-color: $tertiary;
+	@if $theme == light {
+		background-color: $secondary_light;
+		color: $primary_light;
+
+		&:hover {
+			background-color: $tertiary_light;
+		}
+	}
+
+	@else {
+		background-color: $secondary_dark;
+		color: $primary_dark;
+
+		&:hover {
+			background-color: $tertiary_dark;
+		}
 	}
 
 	@include tablet {
@@ -79,11 +112,18 @@ $laptop: 1024px;
 	}
 }
 
-@mixin line ($height: 5px) {
+@mixin line ($height: 5px, $theme: light) {
 	width: 100%;
 	height: $height;
 	border: none;
 	border-radius: $height/2;
 	margin: 5px 0;
-	background-color: $primary;
+
+	@if $theme == light {
+		background-color: $primary_light;
+	}
+
+	@else {
+		background-color: $primary_dark;
+	}
 }

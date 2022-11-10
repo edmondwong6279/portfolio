@@ -3,12 +3,6 @@
 .container {
 	width: 100%;
 
-	.link {
-		@include link;
-
-		font-weight: 600;
-	}
-
 	.aboutSection {
 		width: 100%;
 

@@ -92,7 +92,7 @@ const SkillsComponent: React.FC = () => {
               x={textOffset * xUnit + 5 * xUnit}
               className={styles.scaleLabel}
               dominantBaseline="middle"
-              text-anchor="end"
+              textAnchor="end"
             >
               Intermediate
             </text>

@@ -1,8 +1,9 @@
 import styles from "./ProjectItemComponent.module.scss";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useIsInViewport } from "hooks";
 import { projectType } from "types";
 import classNames from "classnames";
+import { ThemeContext } from "context/context";
 
 export type Props = {
   projectItem: projectType;
@@ -23,6 +24,7 @@ const ProjectItemComponent: React.FC<Props> = ({
   const vidRef = useRef<HTMLVideoElement | null>(null);
   const refContainer = useRef<HTMLDivElement | null>(null);
   const isInViewport1 = useIsInViewport(vidRef);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     if (isInViewport1) {
@@ -43,7 +45,7 @@ const ProjectItemComponent: React.FC<Props> = ({
       ref={refContainer}
       className={classNames(styles.gridItem, { [styles.noLine]: idx === 0 })}
     >
-      <hr className={styles.line} />
+      <hr className={classNames(styles.line, styles[theme])} />
       <div className={styles.gridTitle}>{projectItem.title}</div>
       <div className={styles.gridImage}>
         <video className={styles.vid} playsInline muted loop ref={vidRef}>
@@ -54,7 +56,7 @@ const ProjectItemComponent: React.FC<Props> = ({
         {projectItem.projectLink && (
           <a
             target={"_blank"}
-            className={styles.link}
+            className={classNames(styles.link, styles[theme])}
             href={projectItem.projectLink}
           >
             Project Link
@@ -63,7 +65,7 @@ const ProjectItemComponent: React.FC<Props> = ({
         {projectItem.gitprojectLink && (
           <a
             target={"_blank"}
-            className={styles.link}
+            className={classNames(styles.link, styles[theme])}
             href={projectItem.gitprojectLink}
           >
             Github Repo
@@ -75,7 +77,10 @@ const ProjectItemComponent: React.FC<Props> = ({
         <h4>Tags:</h4>
         <div className={styles.gridTags}>
           {projectItem.tags.map((tag, idx) => (
-            <div className={styles.gridTag} key={idx}>
+            <div
+              className={classNames(styles.gridTag, styles[theme])}
+              key={idx}
+            >
               {tag}
             </div>
           ))}

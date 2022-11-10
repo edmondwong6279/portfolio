@@ -1,8 +1,22 @@
 @import "styles/main";
 
+:export {
+	bg_dark: $bg_dark;
+	bg_light: $bg_light;
+}
+
 .container {
 	position: relative;
 	width: 100%;
+	transition: all 0.2s ease-in-out;
+
+	&.light {
+		@include getTheme(light);
+	}
+
+	&.dark {
+		@include getTheme(dark);
+	}
 
 	.sections {
 		@include container;
@@ -10,6 +24,10 @@
 		.sectionContainer {
 			overflow: hidden;
 			margin-top: 20px;
+		}
+
+		.hi {
+			color: white;
 		}
 	}
 }

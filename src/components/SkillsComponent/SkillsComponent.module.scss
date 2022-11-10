@@ -25,7 +25,6 @@
 		.svg {
 			width: 100%;
 			margin: 10px;
-			color: $primary;
 
 			@include tablet {
 				max-width: 1000px;
@@ -44,13 +43,11 @@
 			}
 
 			.divider {
-				stroke: $primary;
 				stroke-width: 2px;
 			}
 
 			.graphLine {
 				opacity: 0.5;
-				stroke: $primary;
 				stroke-dasharray: 4;
 				stroke-width: 1px;
 			}

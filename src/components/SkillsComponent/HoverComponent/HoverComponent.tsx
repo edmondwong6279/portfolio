@@ -1,4 +1,3 @@
-import styles from "./HoverComponent.module.scss";
 import React from "react";
 import { motion } from "framer-motion";
 import { skillBarType } from "types";
@@ -12,7 +11,6 @@ const HoverComponent: React.FC<Props> = ({ idx, skill }) => (
   <g>
     <motion.rect
       key={idx}
-      className={styles.bar}
       x={skill.x}
       y={skill.y}
       width={skill.width}

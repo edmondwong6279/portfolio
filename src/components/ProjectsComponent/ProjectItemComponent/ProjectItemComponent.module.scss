@@ -24,7 +24,13 @@
 	}
 
 	.line {
-		@include line(3px);
+		&.light {
+			@include line(3px, light);
+		}
+
+		&.dark {
+			@include line(3px, dark);
+		}
 
 		position: absolute;
 		top: 0;
@@ -83,7 +89,15 @@
 		grid-area: links;
 
 		.link {
-			@include link;
+			font-weight: 600;
+
+			&.light {
+				@include link(light);
+			}
+
+			&.dark {
+				@include link(dark);
+			}
 		}
 	}
 
@@ -123,10 +137,17 @@
 
 			.gridTag {
 				padding: 5px 10px;
-				border: 2px $primary solid;
 				border-radius: 5px;
 				background-color: transparent;
 				font-weight: 700;
+
+				&.light {
+					border: 2px $primary_light solid;
+				}
+
+				&.dark {
+					border: 2px $primary_dark solid;
+				}
 			}
 		}
 	}

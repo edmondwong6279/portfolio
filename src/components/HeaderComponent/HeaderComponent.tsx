@@ -1,10 +1,12 @@
 import styles from "./HeaderComponent.module.scss";
-import React from "react";
+import React, { useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import classNames from "classnames";
 import { useRouter } from "next/router";
 import { sectionArrayType } from "types";
+import { ThemeContext } from "context/context";
+import DarkModeComponent from "components/DarkModeComponent";
 
 export type Props = {
   sectionArray: sectionArrayType;
@@ -18,10 +20,11 @@ const HeaderComponent: React.FC<Props> = ({
   scrolled,
 }) => {
   const router = useRouter();
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
-      className={classNames(styles.headerContainerOuter, {
+      className={classNames(styles.headerContainerOuter, styles[`${theme}`], {
         [styles.scrolled]: scrolled,
       })}
     >
@@ -37,8 +40,9 @@ const HeaderComponent: React.FC<Props> = ({
         <Link href={"/"}>
           <h1 className={styles.mainTitle}>Ed Wong</h1>
         </Link>
+        <DarkModeComponent />
         <motion.hr
-          className={styles.hr}
+          className={classNames(styles.hr, styles[theme])}
           animate={{
             opacity: [0, 1],
             width: ["0%", "100%"],
@@ -58,12 +62,12 @@ const HeaderComponent: React.FC<Props> = ({
       >
         {sectionArray.map((navItem, idx) => (
           <Link href={navItem.linkName} key={idx}>
-            <div className={styles.navItem}>
+            <div className={classNames(styles.navItem, styles[theme])}>
               {navItem.name}
               <AnimatePresence>
                 {router.pathname === navItem.linkName && (
                   <motion.div
-                    className={styles.underline}
+                    className={classNames(styles.underline, styles[theme])}
                     layoutId="underline"
                     initial={{ opacity: 0 }}
                     exit={{ opacity: 0 }}
