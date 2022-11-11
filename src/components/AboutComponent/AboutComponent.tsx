@@ -216,7 +216,7 @@ const AboutComponent: React.FC = () => (
             </SwiperSlide>
             <SwiperSlide>
               <ImageComponent
-                alt={"A group of friends running coventry half marathon 2016."}
+                alt={"A group of friends running coventry half marathon 2017."}
                 src={"/images/covhalf_17.jpg"}
               />
             </SwiperSlide>
