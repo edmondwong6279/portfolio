@@ -28,7 +28,11 @@ const DarkModeComponent: React.FC<Props> = ({ totalDuration }) => {
           delay: totalDuration * 0.8,
         },
       }}
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        localStorage.setItem("theme", newTheme);
+        setTheme(newTheme);
+      }}
     >
       <Image
         className={styles.themeIcon}

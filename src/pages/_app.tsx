@@ -40,19 +40,27 @@ export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 0);
-    window.addEventListener("scroll", handleScroll);
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-    document.body.style.transition = "all 0.2s ease-in-out";
+    // for the scroll effect in the header
+    window.addEventListener("scroll", () => setScrolled(window.scrollY > 0));
 
-    return window.removeEventListener("scroll", handleScroll);
+    // check if localstorage has theme already
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light" || savedTheme === "dark") {
+      setTheme(savedTheme);
+    } else {
+      // otherwise, use the preferred color scheme
+      const newTheme =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+
+      setTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
+
+    document.body.style.transition = "all 0.2s ease-in-out";
   }, []);
 
   useEffect(() => {
@@ -65,6 +73,20 @@ export default function App({ Component, pageProps }: AppProps) {
       <>
         <Head>
           <title>Ed Wong Portfolio</title>
+          <link
+            rel="icon"
+            href={theme === "light" ? "/fav.ico" : "/fav_dark.ico"}
+          />
+          <link
+            rel="shortcut icon"
+            href={theme === "light" ? "/fav.ico" : "/fav_dark.ico"}
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="184x184"
+            type="image/png"
+            href={theme === "light" ? "/fav.png" : "/fav_dark.png"}
+          />
         </Head>
         <div className={classNames(styles.container, styles[theme])}>
           <ThemeContext.Provider value={{ theme, setTheme }}>

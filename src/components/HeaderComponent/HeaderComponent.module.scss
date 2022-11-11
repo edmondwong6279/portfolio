@@ -13,7 +13,13 @@
 	}
 
 	&.scrolled {
-		box-shadow: 0 0 5px;
+		&.light {
+			box-shadow: 0 0 5px $primary_light;
+		}
+
+		&.dark {
+			box-shadow: 0 0 5px $primary_dark;
+		}
 	}
 
 	.headerContainer {

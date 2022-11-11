@@ -24,7 +24,7 @@ const HeaderComponent: React.FC<Props> = ({
 
   return (
     <div
-      className={classNames(styles.headerContainerOuter, styles[`${theme}`], {
+      className={classNames(styles.headerContainerOuter, styles[theme], {
         [styles.scrolled]: scrolled,
       })}
     >

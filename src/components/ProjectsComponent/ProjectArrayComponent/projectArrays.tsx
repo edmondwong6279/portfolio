@@ -42,7 +42,7 @@ export const projectsArray: projectType[] = [
         <ul>
           <li>Gain experience in working in a team with a large client.</li>
           <li>
-            Produce code that was being delivered on an real client project.
+            Produce code that was being delivered on a real client project.
           </li>
         </ul>
       </>
@@ -113,15 +113,15 @@ export const projectsArray: projectType[] = [
         <p>This project helped me to:</p>
         <ul>
           <li>
-            Create a fluid experience where data visualisation that seamlessly
+            Create a fluid experience with data visualisation that seamlessly
             switches between graph types.
           </li>
           <li>
-            Create custom slider component that allows for a pleasant and
+            Create a custom slider component that allows for a pleasant and
             intuitive UX.
           </li>
           <li>
-            Collaborated with one other developer to produce a clean
+            Collaborated with another developer to produce a clean
             implementation of this data visualisation project.
           </li>
         </ul>
@@ -177,8 +177,8 @@ export const projectsArray: projectType[] = [
             regarding functionality and design.
           </li>
           <li>
-            Utilise matter-js to simulate the physics of the bubbles, rendering
-            using canvas.
+            Utilise matter-js to simulate the physics of the bubbles and render
+            them with canvas.
           </li>
           <li>
             Learn how to use Knex to connect to a PostgreSQL database and
@@ -248,16 +248,16 @@ export const projectsArray: projectType[] = [
         </p>
         <p>This project helped me to:</p>
         <ul>
-          <li>Learn to scrape data from csv data using fetch.</li>
+          <li>Learn to scrape data from csv files using fetch.</li>
           <li>
-            Use d3 (specifically d3 scale) to calculate mouse positions to allow
+            Use d3 (specifically d3-scale) to calculate mouse positions to allow
             for the hover tooltip.
           </li>
           <li>
             Make a simple loading animation while data was fetched and
             processed.
           </li>
-          <li>Use framer motion to load in and out the line plot.</li>
+          <li>Use framer motion to load the line plot in and out.</li>
         </ul>
       </>
     ),
