@@ -222,8 +222,8 @@ export const projectsArray: projectType[] = [
         </ul>
       </>
     ),
-    // projectLink: "google.com",
-    // gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
+    projectLink: "https://bacon-snakes.vercel.app/",
+    gitprojectLink: "https://github.com/edmondwong6279/bacon-snakes",
     tags: [tags.canvas, tags.game, tags.fun, tags.solo, tags.ws, tags.personal],
   },
   {
